@@ -2,7 +2,33 @@
   "RSpec": {
     "coverage": {
       "/Users/brickstar/turing/2module/projects/little-shop-redux/spec/features/user_can_see_a_single_merchant_spec.rb": [
-
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
       ],
       "/Users/brickstar/turing/2module/projects/little-shop-redux/spec/features/user_can_see_all_merchants_spec.rb": [
         1,
@@ -40,6 +66,6 @@
         null
       ]
     },
-    "timestamp": 1530140659
+    "timestamp": 1530143213
   }
 }

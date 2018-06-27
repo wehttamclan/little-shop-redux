@@ -11,3 +11,4 @@ RSpec.describe Merchant do
       expect(merchant).to be_valid
     end
   end
+end

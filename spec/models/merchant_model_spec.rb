@@ -5,9 +5,9 @@ RSpec.describe Merchant do
 
       expect(merchant).to_not be_valid
     end
-    it 'is invalid with a name' do
+    it 'is valid with a name' do
       merchant = Merchant.create(name: 'Test')
 
-      expect(merchant).to_not be_valid
+      expect(merchant).to be_valid
     end
   end

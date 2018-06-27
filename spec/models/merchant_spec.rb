@@ -1,3 +1,5 @@
+
+
 RSpec.describe Merchant do
   describe 'Validations' do
     it 'is invalid without a name' do

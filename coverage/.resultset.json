@@ -1,0 +1,25 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/robmccluskey/turing/module2/current-projects/little-shop-redux/spec/models/merchant_spec.rb": [
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        1,
+        null,
+        null,
+        null
+      ]
+    },
+    "timestamp": 1530135517
+  }
+}

@@ -1,4 +1,8 @@
 db/csv/*.csv
 Gemfile.lock
 
-*coverage
+/coverage
+coverage
+/tmp/*
+tmp
+/coverage/*

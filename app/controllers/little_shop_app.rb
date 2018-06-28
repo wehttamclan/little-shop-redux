@@ -1,3 +1,5 @@
+require 'pry'
+
 class LittleShopApp < Sinatra::Base
 
   get '/merchants' do
@@ -30,7 +32,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   delete '/merchants/:id' do |id|
-    Merchant.destroy(id.to_i)
+    Merchant.destroy(id)
     redirect '/merchants'
   end
 end

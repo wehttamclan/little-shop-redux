@@ -1,11 +1,13 @@
 <h1>All Merchants</h1>
 <% @merchants.each do |merchant| %>
 <ul>
-  <li class="delete-<%= merchant.id %>"><%= merchant.name %></li>
+  <li><%= merchant.name %></li>
   <a href="/merchants/<%= merchant.id %>/edit"><button>Edit</button></a>
-  <form action="/merchants" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete"/>
-  </form>
+  <div class="delete-<%= merchant.id %>">
+    <form action="/merchants/<%= merchant.id %>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+  </div>
 </ul>
 <% end %>

@@ -8,6 +8,7 @@ require 'simplecov'
 SimpleCov.start
 
 Capybara.app = LittleShopApp
+Capybara.save_path = 'tmp/capybara'
 
 RSpec.configure do |c|
   c.include Capybara::DSL

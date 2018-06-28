@@ -12,8 +12,8 @@ describe 'User' do
 
         expect(Merchant.count).to eq(3)
 
-        within "delete-#{merchant2.id}" do
-          click_button 'Delete'
+        within ".delete-#{merchant2.id}" do
+          click_button("Delete")
         end
 
         expect(Merchant.count).to eq(2)

@@ -1,6 +1,25 @@
 require 'pry'
 
 class LittleShopApp < Sinatra::Base
+  get '/items' do
+    @items = Item.all
+    erb :'items/index'
+  end
+
+  get '/items/:id' do
+    @item = Item.find(params[:id])
+    erb :'items/show'
+  end
+
+  get '/items/:id/edit' do
+    @item = Item.find(params[:id])
+    erb :'items/edit'
+  end
+
+  put '/items/:id' do |id|
+    Item.update(id.to_i, params[:item])
+    redirect "/items/#{id}"
+  end
 
   get '/merchants' do
     @merchants = Merchant.all

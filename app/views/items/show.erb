@@ -1,0 +1,11 @@
+<h1><%= @item.title %></h1>
+<h1><%= @item.description %></h1>
+<h1><%= @item.price %></h1>
+<h1><%= @item.image %></h1>
+<a href="/items/<%= @item.id %>/edit"><button>Edit</button></a>
+<div class="delete-<%= @item.id %>">
+  <form action='/items/<%= @item.id %>' method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value="Delete">
+  </form>
+</div>

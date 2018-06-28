@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Merchants</h1>
-  <a href='/merchants/new'><button>Create A New Merchant</a></button>
+  <a href='/merchants/new'><button>Create A New Merchant</button></a>
   <% @merchants.each do |merchant| %>
   <ul>
     <li><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a></br>

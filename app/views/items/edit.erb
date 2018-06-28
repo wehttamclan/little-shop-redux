@@ -1,0 +1,8 @@
+<form action="/items/<%= @item.id %>" method="post">
+  <input type="hidden" name="_method" value="PUT"/>
+  <input type="text" name="item[title]" value="<%= @item.title %>"/>
+  <input type="text" name="item[description]" value="<%= @item.description %>"/>
+  <input type="integer" name="item[price]" value="<%= @item.price %>"/>
+  <input type="text" name="item[image]" value="<%= @item.image %>"/>
+  <input type='submit' value='Update Item'/>
+</form>

@@ -1,0 +1,24 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Items</title>
+</head>
+<body>
+  <h1>Items</h1>
+  <a href='/items/new'><button>Create A New Item</button></a>
+  <% @items.each do |item| %>
+  <ul>
+    <li><%= item.image %></li>
+    <li><a href='/items/<%= item.id %>'><%= item.title %></a></li>
+    <li><%= item.price %></li>
+      <a href="/items/<%= item.id %>/edit"><button>Edit</button></a>
+      <div id="delete-<%= item.id %>">
+        <form action='/items/<%= item.id %>' method="post">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" value="Delete">
+        </form>
+      </div>
+  </ul>
+  <% end %>
+</body>
+</html>

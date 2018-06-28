@@ -1,12 +1,11 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>Merchants</title>
 </head>
 <body>
   <h1>Merchants</h1>
   <a href='/merchants/new'><button>Create A New Merchant</a></button>
-
   <% @merchants.each do |merchant| %>
   <ul>
     <li><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a></br>

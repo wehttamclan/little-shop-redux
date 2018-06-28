@@ -3,6 +3,17 @@ require 'spec_helper'
 describe 'User' do
   describe 'visists /merchants/new' do
     it 'should see a form and create a merchant' do
+      visit('/merchants/new')
+
+      fill_in 'merchant[name]', with: 'Pete'
+
+      expect(Merchant.count).to eq(0)
+      click_on 'Submit'
+      save_and_open_page
+
+      expect(current_path).to eq('/merchants')
+      expect(Merchant.count).to eq(1)
+      expect(page).to have_content('Pete')
     end
   end
 end

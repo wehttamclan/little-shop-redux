@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-06-27T17:46:53-06:00">2018-06-27T17:46:53-06:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-06-27T18:21:02-06:00">2018-06-27T18:21:02-06:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -31,9 +31,9 @@
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>3</b> files in total.
-    <b>35</b> relevant lines. 
-    <span class="green"><b>35</b> lines covered</span> and
+    <b>4</b> files in total.
+    <b>47</b> relevant lines. 
+    <span class="green"><b>47</b> lines covered</span> and
     <span class="red"><b>0</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -51,7 +51,17 @@
     <tbody>
       
       <tr>
-        <td class="strong"><a href="#01dc537b0da8b9a09d4e6d2f59711986a8c7b485" class="src_link" title="spec/features/user_can_see_a_single_merchant_spec.rb">spec/features/user_can_see_a_single_merchant_spec.rb</a></td>
+        <td class="strong"><a href="#3c5975b82bf38c8bb90719ec9cad74f174f4cb6a" class="src_link" title="spec/features/merchants/user_can_create_a_merchant_spec.rb">spec/features/merchants/user_can_create_a_merchant_spec.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>19</td>
+        <td>12</td>
+        <td>12</td>
+        <td>0</td>
+        <td>1.0</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#223bc4908e382615f15484d743aabf4c8661f6cf" class="src_link" title="spec/features/merchants/user_can_see_a_single_merchant_spec.rb">spec/features/merchants/user_can_see_a_single_merchant_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>27</td>
         <td>16</td>
@@ -61,7 +71,7 @@
       </tr>
       
       <tr>
-        <td class="strong"><a href="#9f9fb03155b80e6188a71b2406a205480fcbd645" class="src_link" title="spec/features/user_can_see_all_merchants_spec.rb">spec/features/user_can_see_all_merchants_spec.rb</a></td>
+        <td class="strong"><a href="#f646fd6d4d126812db6249f4737a226945af9858" class="src_link" title="spec/features/merchants/user_can_see_all_merchants_spec.rb">spec/features/merchants/user_can_see_all_merchants_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>17</td>
         <td>11</td>
@@ -96,9 +106,142 @@
     
       <div class="source_files">
       
-        <div class="source_table" id="01dc537b0da8b9a09d4e6d2f59711986a8c7b485">
+        <div class="source_table" id="3c5975b82bf38c8bb90719ec9cad74f174f4cb6a">
   <div class="header">
-    <h3>spec/features/user_can_see_a_single_merchant_spec.rb</h3>
+    <h3>spec/features/merchants/user_can_create_a_merchant_spec.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">require &#39;spec_helper&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">describe &#39;User&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  describe &#39;visists /merchants/new&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;should see a form and create a merchant&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      visit(&#39;/merchants/new&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      fill_in &#39;merchant[name]&#39;, with: &#39;Pete&#39;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="9">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Merchant.count).to eq(0)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      click_on &#39;Submit&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      save_and_open_page</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="13">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(current_path).to eq(&#39;/merchants&#39;)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(Merchant.count).to eq(1)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="16">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(page).to have_content(&#39;Pete&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+
+      
+        <div class="source_table" id="223bc4908e382615f15484d743aabf4c8661f6cf">
+  <div class="header">
+    <h3>spec/features/merchants/user_can_see_a_single_merchant_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>16</b> relevant lines. 
@@ -277,9 +420,9 @@
 </div>
 
       
-        <div class="source_table" id="9f9fb03155b80e6188a71b2406a205480fcbd645">
+        <div class="source_table" id="f646fd6d4d126812db6249f4737a226945af9858">
   <div class="header">
-    <h3>spec/features/user_can_see_all_merchants_spec.rb</h3>
+    <h3>spec/features/merchants/user_can_see_all_merchants_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>11</b> relevant lines. 

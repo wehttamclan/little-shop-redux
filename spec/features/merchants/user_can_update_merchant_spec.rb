@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe 'User' do
   describe 'visits /merchants/edit' do
-    it 'should see a form and update a merchant and land on merchant show' do
+    it 'should see a form, update a merchant and land on merchant show' do
       merchant = Merchant.create(name: 'dingle')
 
       visit('/merchants')

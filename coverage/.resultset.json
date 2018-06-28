@@ -21,6 +21,37 @@
         null,
         null
       ],
+      "/Users/brickstar/turing/2module/projects/little-shop-redux/spec/features/merchants/user_can_delete_merchant_spec.rb": [
+        1,
+        null,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        0,
+        null,
+        null,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null
+      ],
       "/Users/brickstar/turing/2module/projects/little-shop-redux/spec/features/merchants/user_can_see_a_single_merchant_spec.rb": [
         1,
         null,
@@ -71,7 +102,7 @@
       ],
       "/Users/brickstar/turing/2module/projects/little-shop-redux/spec/features/merchants/user_can_update_merchant_spec.rb": [
         1,
-        1,
+        null,
         1,
         1,
         1,
@@ -110,6 +141,6 @@
         null
       ]
     },
-    "timestamp": 1530154799
+    "timestamp": 1530158096
   }
 }

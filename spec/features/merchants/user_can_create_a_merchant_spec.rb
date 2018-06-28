@@ -9,7 +9,6 @@ describe 'User' do
 
       expect(Merchant.count).to eq(0)
       click_on 'Submit'
-      save_and_open_page
 
       expect(current_path).to eq('/merchants')
       expect(Merchant.count).to eq(1)

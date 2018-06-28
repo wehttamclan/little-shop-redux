@@ -12,7 +12,7 @@ describe 'User' do
 
         expect(Merchant.count).to eq(3)
 
-        within ".delete-#{merchant2.id}" do
+        within "#delete-#{merchant2.id}" do
           click_button("Delete")
         end
 
@@ -38,7 +38,7 @@ describe 'User' do
 
         expect(Merchant.count).to eq(3)
         expect(page).to have_content('two')
-        
+
         visit "merchants/#{merchant2.id}"
 
         click_button 'Delete'

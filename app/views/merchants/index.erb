@@ -10,7 +10,7 @@
   <ul>
     <li><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a></br>
       <a href="/merchants/<%= merchant.id %>/edit"><button>Edit</button></a>
-      <div class="delete-<%= merchant.id %>">
+      <div id="delete-<%= merchant.id %>">
         <form action='/merchants/<%= merchant.id %>' method="post">
           <input type="hidden" name="_method" value="delete">
           <input type="submit" value="Delete">

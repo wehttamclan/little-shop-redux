@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'pry'
+
 describe 'User' do
   describe 'visits /merchants/edit' do
     it 'should see a form and update a merchant and land on merchant show' do

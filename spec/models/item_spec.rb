@@ -8,8 +8,9 @@ RSpec.describe Item do
 
       expect(item).to_not be_valid
     end
+
     it 'is valid with a title' do
-      item = Item.create(title: "some item",
+      item = Item.create(title: 'some item',
                          description: 'something',
                          price: 200,
                          image: 'www.example.com')
@@ -25,6 +26,7 @@ RSpec.describe Item do
 
       expect(item).to_not be_valid
     end
+
     it 'is valid with a description' do
       item = Item.create(title: 'some item',
                          description: 'something',
@@ -42,6 +44,7 @@ RSpec.describe Item do
 
       expect(item).to_not be_valid
     end
+
     it 'is valid with a price' do
       item = Item.create(title: 'some item',
                          description: 'something',
@@ -59,6 +62,7 @@ RSpec.describe Item do
 
       expect(item).to_not be_valid
     end
+    
     it 'is valid with a image' do
       item = Item.create(title: 'some item',
                          description: 'something',

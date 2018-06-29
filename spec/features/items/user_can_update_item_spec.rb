@@ -4,9 +4,9 @@ describe 'User' do
   describe 'visits /items/:id/edit' do
     it 'should see a form, update a item and land on item show' do
       test_item = Item.create(title: 'dongle',
-                          description: 'something',
-                          price: 200,
-                          image: 'www.example.com')
+                              description: 'something',
+                              price: 200,
+                              image: 'www.example.com')
 
       visit('/items')
 

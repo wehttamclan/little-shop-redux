@@ -1,11 +1,15 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel='stylesheet' href='main.css' title='text/css'>
   <title>Merchants</title>
 </head>
 <body>
-  <h1>Merchants</h1>
-  <a href='/merchants/new'><button>Create A New Merchant</button></a>
+  <header id='header'>
+    <h1>Merchants</h1>
+    <a href='/merchants/new'><button>Create A New Merchant</button></a>
+  </header>
   <% @merchants.each do |merchant| %>
   <ul>
     <li><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a></br>

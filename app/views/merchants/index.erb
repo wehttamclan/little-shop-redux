@@ -8,9 +8,10 @@
 </head>
 <body>
   <header id='header'>
-    <h1 id='merchant-logo'>Merchants</h1>
-    <p>
-    <a id='create-merchant' href='/merchants/new'><button id='create-merchant-button'>Create A New Merchant</button></a>
+    <a id='dashboard-link' href="/dashboard">Dashboard</a>
+    <p id='merchant-logo'>Merchants</p>
+    <p id='create-merchant' >
+    <a href='/merchants/new'><button id='create-merchant-button'>Create A New Merchant</button></a>
     </p>
   </header>
   <% @merchants.each do |merchant| %>

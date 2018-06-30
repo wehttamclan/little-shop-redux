@@ -14,8 +14,13 @@ ul {
   font-family: 'Amiko';font-size: 22px;
 }
 
+#dashboard-link {
+  font-size: 12px;
+  margin-left: 8px;
+}
+
 #merchant-logo {
-  margin-top: 5px;
+  font-size: 20px;
   display: flex;
   justify-content: center;
 }

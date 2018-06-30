@@ -7,13 +7,6 @@ ul {
   list-style-type: none;
 }
 
-.little-shop {
-  font-size: 90%;
-  display: flex;
-  align-self: center;
-  padding-left: 10px;
-}
-
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -30,6 +23,12 @@ ul {
   display: flex;
   align-items: center;
   padding: 8px 4px;
+}
+
+#little-shop {
+  margin-right: 552px;
+  display: flex;
+  align-items: center;
 }
 
 #header {

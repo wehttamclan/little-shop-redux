@@ -3,12 +3,15 @@
 <head>
   <meta charset="utf-8">
   <link rel='stylesheet' href='main.css' title='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Amiko' rel='stylesheet'>
   <title>Merchants</title>
 </head>
 <body>
   <header id='header'>
-    <h1>Merchants</h1>
-    <a href='/merchants/new'><button>Create A New Merchant</button></a>
+    <h1 id='merchant-logo'>Merchants</h1>
+    <p>
+    <a id='create-merchant' href='/merchants/new'><button>Create A New Merchant</button></a>
+    </p>
   </header>
   <% @merchants.each do |merchant| %>
   <ul>

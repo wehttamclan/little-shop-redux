@@ -91,3 +91,15 @@ ul {
   background-color: #ff7c3b;
   box-shadow: 1px 1px 6px 0px #9e9e9e;
 }
+
+#create-box {
+  display: flex;
+  justify-content: center;
+}
+
+#create-contents {
+  width: 80%;
+  border: 1px solid black;
+  height: 300px;
+  margin-top: 5px;
+}

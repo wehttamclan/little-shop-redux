@@ -15,13 +15,13 @@
   </header>
   <% @merchants.each do |merchant| %>
   <ul>
-    <li id='merchant-row'><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-      <div id='edit-delete-buttons'>
-      <a href="/merchants/<%= merchant.id %>/edit"><button>Edit</button></a>
+    <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+      <div id='buttons-box'>
+      <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
       <div id="delete-<%= merchant.id %>">
         <form action='/merchants/<%= merchant.id %>' method="post">
           <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
+          <input id='delete-button' type="submit" value="Delete">
         </form>
       </div>
     </div>

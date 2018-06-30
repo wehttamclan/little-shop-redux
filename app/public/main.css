@@ -3,6 +3,10 @@
   margin: 0;
 }
 
+ul {
+  list-style-type: none;
+}
+
 #header {
   height: 90px;
   border: 1px solid black;
@@ -25,10 +29,27 @@
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
+  height: 22px;
 }
 
-#edit-delete-buttons {
+#merchant-name {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+#buttons-box {
   display: flex;
 }
 
-    background-color: #FFEB3B;
+#edit-button {
+  background-color: #FFEB3B;
+  box-shadow: 1px 1px 6px 0px #9e9e9e;
+}
+
+#delete-button {
+  margin-left: 10px;
+  margin-right: 5px;
+  background-color: #ff7c3b;
+  box-shadow: 1px 1px 6px 0px #9e9e9e;
+}

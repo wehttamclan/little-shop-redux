@@ -38,7 +38,11 @@ ul {
   display: flex;
   justify-content: space-between;
   border: 1px solid black;
-  height: 22px;
+  height: 24px;
+}
+
+#grey-row {
+  background-color: #e2e2e2;
 }
 
 #merchant-name {
@@ -49,6 +53,7 @@ ul {
 
 #buttons-box {
   display: flex;
+  align-items: center;
 }
 
 #edit-button {

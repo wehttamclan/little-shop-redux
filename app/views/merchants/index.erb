@@ -1,23 +1,57 @@
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
+  <link rel='stylesheet' href='/main.css' title='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Amiko' rel='stylesheet'>
   <title>Merchants</title>
 </head>
 <body>
-  <h1>Merchants</h1>
-  <a href='/merchants/new'><button>Create A New Merchant</button></a>
-  <% @merchants.each do |merchant| %>
-  <ul>
-    <li><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a></br>
-      <a href="/merchants/<%= merchant.id %>/edit"><button>Edit</button></a>
-      <div id="delete-<%= merchant.id %>">
-        <form action='/merchants/<%= merchant.id %>' method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
-        </form>
+  <nav class='nav'>
+    <ul class='nav-links'>
+      <li id='little-shop'><a href='/'>LittleShop</a></li>
+      <li class='nav-link'><a href='/merchants'>Merchants</a></li>
+      <li class='nav-link'><a href='/items'>Items</a></li>
+      <li class='nav-link'><a href='/invoices'>Invoices</a></li>
+    </ul>
+  </nav>
+  <header id='header'>
+    <a id='dashboard-link' href="/dashboard">Dashboard</a>
+    <p id='merchant-logo'>Merchants</p>
+    <p id='create-merchant' >
+      <a href='/merchants/new'><button id='create-merchant-button'>Create A New Merchant</button></a>
+    </p>
+  </header>
+  <% @merchants.each_with_index do |merchant, index| %>
+  <% if index.odd? %>
+  <ul id='grey-row'>
+    <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+      <div id='buttons-box'>
+        <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
+        <div id="delete-<%= merchant.id %>">
+          <form action='/merchants/<%= merchant.id %>' method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input id='delete-button' type="submit" value="Delete">
+          </form>
+        </div>
       </div>
     </li>
   </ul>
+  <% else %>
+  <ul>
+    <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+      <div id='buttons-box'>
+        <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
+        <div id="delete-<%= merchant.id %>">
+          <form action='/merchants/<%= merchant.id %>' method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input id='delete-button' type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </li>
+  </ul>
+  <% end %>
   <% end %>
 </body>
 </html>

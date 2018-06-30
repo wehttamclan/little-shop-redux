@@ -15,7 +15,8 @@
   </header>
   <% @merchants.each do |merchant| %>
   <ul>
-    <li><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a></br>
+    <li id='merchant-row'><a href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+      <div id='edit-delete-buttons'>
       <a href="/merchants/<%= merchant.id %>/edit"><button>Edit</button></a>
       <div id="delete-<%= merchant.id %>">
         <form action='/merchants/<%= merchant.id %>' method="post">
@@ -23,6 +24,7 @@
           <input type="submit" value="Delete">
         </form>
       </div>
+    </div>
     </li>
   </ul>
   <% end %>

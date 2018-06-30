@@ -4,12 +4,14 @@
 }
 
 #header {
+  height: 90px;
   border: 1px solid black;
   background-color: rgba(56, 14, 238, 0.06);
   font-family: 'Amiko';font-size: 22px;
 }
 
 #merchant-logo {
+  margin-top: 5px;
   display: flex;
   justify-content: center;
 }
@@ -17,5 +19,16 @@
 #create-merchant {
   display: flex;
   justify-content: center;
-
 }
+
+#merchant-row {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid black;
+}
+
+#edit-delete-buttons {
+  display: flex;
+}
+
+    background-color: #FFEB3B;

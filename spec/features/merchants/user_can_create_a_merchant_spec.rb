@@ -8,7 +8,7 @@ describe 'User' do
       fill_in 'merchant[name]', with: 'Pete'
 
       expect(Merchant.count).to eq(0)
-      click_on 'Submit'
+      click_on 'Create Merchant'
 
       expect(current_path).to eq('/merchants')
       expect(Merchant.count).to eq(1)

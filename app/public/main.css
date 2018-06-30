@@ -103,3 +103,10 @@ ul {
   height: 300px;
   margin-top: 5px;
 }
+
+#cancel-create-buttons {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 230px;
+}

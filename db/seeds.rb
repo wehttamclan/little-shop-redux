@@ -25,5 +25,5 @@ CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |i
 end
 
 CSV.foreach('./data/invoice_items.csv', headers: true, header_converters: :symbol) do |invoice_item|
-  InvoiceItem.create!(invoice_item.to_h)
+  InvoiceItem.create(invoice_item.to_h)
 end

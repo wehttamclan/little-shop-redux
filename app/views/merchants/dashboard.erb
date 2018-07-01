@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Merchants Dashboard</title>
+  </head>
+  <body>
+    <p id='merchant-with-most-items'>Merchant With Most Items: <%= @merchant_with_most_items.name %></p>
+    <% @merchants.each do |merchant| %>
+    <p id='<%= merchant.name %>'><%= merchant.name %></p>
+    <p id='item-count-<%= merchant.id %>'>Item Count:</br><%= merchant.items.length %></p>
+    <p id='average-price-<%= merchant.id %>'>Average Item Price:</br><%= merchant.avg_item_price %></p>
+    <p id='total-cost-<%= merchant.id %>'>Total Cost of Items:</br><%= merchant.total_cost_of_items %></p>
+    <% end %>
+  </body>
+</html>

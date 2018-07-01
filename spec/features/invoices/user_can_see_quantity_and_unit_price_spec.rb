@@ -48,7 +48,7 @@ describe 'User' do
                                              quantity: 3,
                                              unit_price: 200)
 
-      expected = test_invoice.total_price
+      expected = (test_invoice.total_price) / 100.0
 
       visit("/invoices/#{test_invoice.id}")
 

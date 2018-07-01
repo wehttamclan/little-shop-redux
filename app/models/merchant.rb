@@ -4,7 +4,11 @@ class Merchant < ActiveRecord::Base
 
   validates_presence_of :name
 
-  def average_price
+  def avg_item_price
     items.average(:price)
+  end
+
+  def total_cost_of_items
+    items.sum(:price)
   end
 end

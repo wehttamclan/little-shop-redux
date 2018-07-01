@@ -43,7 +43,7 @@ describe 'User' do
                           price: 300,
                           image: 'www.realimage.com')
 
-      expected = merchant.average_price
+      expected = merchant.avg_item_price
 
       visit "/merchants-dashboard"
 

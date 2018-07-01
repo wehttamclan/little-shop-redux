@@ -8,7 +8,7 @@
     <% @merchants.each do |merchant| %>
     <p id='<%= merchant.name %>'><%= merchant.name %></p>
     <p id='item-count-<%= merchant.id %>'>Item Count:</br><%= merchant.items.length %></p>
-    <p id='average-price-<%= merchant.id %>'>Average Item Price:</br><%= merchant.average_price %></p>
+    <p id='average-price-<%= merchant.id %>'>Average Item Price:</br><%= merchant.avg_item_price %></p>
     <% end %>
   </body>
 </html>

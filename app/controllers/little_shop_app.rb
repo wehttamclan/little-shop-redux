@@ -75,7 +75,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants-dashboard' do
-    require 'pry';binding.pry
     @merchants = Merchant.all.includes(:items)
     @merchant_with_most_items = Merchant.find_merchant_with_most_items
     erb :'merchants/dashboard'

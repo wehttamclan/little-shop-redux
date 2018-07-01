@@ -62,7 +62,7 @@ RSpec.describe Item do
 
       expect(item).to_not be_valid
     end
-    
+
     it 'is valid with a image' do
       item = Item.create(title: 'some item',
                          description: 'something',
@@ -70,6 +70,23 @@ RSpec.describe Item do
                          image: 'www.example.com')
 
       expect(item).to be_valid
+    end
+  end
+  describe 'Class Methods' do
+    it 'will show newest or oldest item' do
+      item1 = Item.create(title: 'some item',
+                          description: 'something',
+                          price: 200,
+                          image: 'www.example.com',
+                          created_at: '2018-07-01 17:18:48 UTC')
+      item2 = Item.create(title: 'some other item',
+                          description: 'something else',
+                          price: 333,
+                          image: 'www.realimage.com',
+                          created_at: '2018-07-01 17:18:50 UTC')
+
+      expect(Item.newest).to eq(item2)
+      expect(Item.oldest).to eq(item1)
     end
   end
 end

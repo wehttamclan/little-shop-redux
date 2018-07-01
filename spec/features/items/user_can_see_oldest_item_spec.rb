@@ -20,7 +20,6 @@ describe 'Class Methods' do
         expect(page).to have_content('Item by Age')
         within('.oldest') do
           expect(page).to have_content('Oldest')
-          expect(Item.oldest).to eq(item1)
         end
       end
     end

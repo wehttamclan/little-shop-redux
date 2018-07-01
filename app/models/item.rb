@@ -9,6 +9,14 @@ class Item < ActiveRecord::Base
   end
 
   def self.avg_price
-    average(:price)
+    average(:price) / 100
+  end
+
+  def self.newest
+    order(:created_at).last
+  end
+
+  def self.oldest
+    order(:created_at).first
   end
 end

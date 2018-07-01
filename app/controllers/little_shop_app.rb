@@ -79,8 +79,13 @@ class LittleShopApp < Sinatra::Base
     erb :'invoices/index'
   end
 
+  get '/invoices-dashboard' do
+    @invoices = Invoice.all
+    @invoice_items = InvoiceItem.all
+    erb :'invoices/dashboard'
+  end
+
   get '/invoices/:id' do
-    
     @invoice = Invoice.find(params[:id])
     erb :'invoices/show'
   end

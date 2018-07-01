@@ -4,7 +4,7 @@ class Merchant < ActiveRecord::Base
 
   validates_presence_of :name
 
-  def self.merchant_with_most_items
+  def self.find_merchant_with_most_items
     all.max_by { |merchant| merchant.items.length }
   end
 

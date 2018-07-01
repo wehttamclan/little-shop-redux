@@ -31,7 +31,7 @@ RSpec.describe Merchant do
 
         expected = merchant1
 
-        expect(Merchant.merchant_with_most_items).to eq(expected)
+        expect(Merchant.find_merchant_with_most_items).to eq(expected)
       end
     end
   end
@@ -72,6 +72,5 @@ RSpec.describe Merchant do
         expect(test_merchant.total_cost_of_items).to eq(expected)
       end
     end
-
   end
 end

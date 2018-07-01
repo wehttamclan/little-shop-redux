@@ -5,6 +5,7 @@
     <title>Merchants Dashboard</title>
   </head>
   <body>
+    <p id='merchant-with-most-items'>Merchant With Most Items: <%= @merchant_with_most_items.name %></p>
     <% @merchants.each do |merchant| %>
     <p id='<%= merchant.name %>'><%= merchant.name %></p>
     <p id='item-count-<%= merchant.id %>'>Item Count:</br><%= merchant.items.length %></p>

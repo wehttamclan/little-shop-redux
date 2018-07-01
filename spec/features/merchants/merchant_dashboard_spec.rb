@@ -71,6 +71,31 @@ describe 'User' do
         expect(page).to have_content(expected)
       end
     end
+
+    it 'should see the name of the merchant with the most items' do
+      merchant1 = Merchant.create(name: 'Peters')
+      merchant2 = Merchant.create(name: 'Bricker')
+      merchant1.items.create(title: 'item1',
+                          description: 'something',
+                          price: 200,
+                          image: 'www.example.com')
+      merchant1.items.create(title: 'item2',
+                          description: 'something else',
+                          price: 333,
+                          image: 'www.realimage.com')
+      merchant2.items.create(title: '3',
+                          description: 'something',
+                          price: 200,
+                          image: 'www.example.com')
+
+      expected = merchant1.name
+
+      visit "/merchants-dashboard"
+
+      within('#merchant-with-most-items') do
+        expect(page).to have_content(expected)
+      end
+    end
   end
 end
 # Average price of item for this merchant

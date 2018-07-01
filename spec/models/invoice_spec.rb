@@ -21,29 +21,21 @@ RSpec.describe Invoice do
       expect(invoice).to be_valid
     end
 
-    it 'is can calculate total price for each invoice' do
-      invoice = Invoice.create(merchant_id: 234,
-                               status: 'something')
+    it 'can calculate total price for each invoice' do
+      test_invoice = Invoice.create(merchant_id: 234,
+                                    status: 'pending')
 
-      expect(invoice).to be_valid
-    end
-  end
+      invoice_item_1 = InvoiceItem.create(item_id: 123,
+                                          invoice_id: 1,
+                                          quantity: 2,
+                                          unit_price: 100)
 
-  describe 'instance methods' do
-    describe 'Invoice.item_quantity' do
-      xit "should return count of item" do
-        invoice = Invoice.create(merchant_id: 1,
-                                 status: 'something')
+      invoice_item_2 = InvoiceItem.create(item_id: 234,
+                                          invoice_id: 1,
+                                          quantity: 3,
+                                          unit_price: 200)
 
-        invoice_item_1 = InvoiceItem.create(item_id: 11,
-                                            invoice_id: 1,
-                                            quantity: 2,
-                                            unit_price: 100)
-
-        quant = 2
-
-        expect(invoice.item_quantity).to eq(quant)
-      end
+      expect(test_invoice.total_price).to eq(800)
     end
   end
 end

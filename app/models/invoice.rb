@@ -5,7 +5,9 @@ class Invoice < ActiveRecord::Base
 
   validates_presence_of :merchant_id, :status
 
-  def item_quantity
-
+  def total_price
+    invoice_items.map do |ii|
+      ii.quantity * ii.unit_price
+    end.sum
   end
 end

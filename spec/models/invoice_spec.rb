@@ -38,4 +38,23 @@ RSpec.describe Invoice do
       expect(test_invoice.total_price).to eq(800)
     end
   end
+  describe 'Class methods' do
+    it 'gives percentage of status' do
+      invoice1 = Invoice.create(merchant_id: 1,
+                          status: 'pending')
+      invoice2 = Invoice.create(merchant_id: 1,
+                          status: 'shipped')
+      invoice3 = Invoice.create(merchant_id: 1,
+                          status: 'returned')
+      invoice4 = Invoice.create(merchant_id: 1,
+                          status: 'returned')
+      pending  = 25
+      shipped  = 25
+      returned = 50
+
+      expect(Invoice.pending).to eq(pending)
+      expect(Invoice.shipped).to eq(shipped)
+      expect(Invoice.returned).to eq(returned)
+    end
+  end
 end

@@ -1,0 +1,47 @@
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Invoices</title>
+</head>
+<body>
+  <h1>Invoices Dashboard</h1>
+  <div class='status'>
+    <p>Status Percentage</p>
+    <div class='pending'>
+      <p>Pending</br><%= "#{@invoices.pending}%" %></p>
+    </div>
+    <div class='shipped'>
+      <p>Shipped</br><%= "#{@invoices.shipped}%" %></p>
+    </div>
+    <div class='returned'>
+      <p>Returned</br><%= "#{@invoices.returned}%" %></p>
+    </div>
+  </div>
+  <div class='prices'>
+    <p>Unit Prices</p>
+    <div class='highest_price'>
+      <p>Highest</br>Invoice:
+        <a href='/invoices/<%= @invoice_items.highest_price %>'><%= @invoice_items.highest_price %></a>
+      </p>
+    </div>
+    <div class='lowest_price'>
+      <p>Lowest</br>Invoice:
+      <a href='/invoices/<%= @invoice_items.lowest_price %>'><%= @invoice_items.lowest_price %></a>
+      </p>
+    </div>
+  </div>
+  <div class='quantity'>
+    <p>Quantity</p>
+    <div class='highest_quantity'>
+      <p>Highest</br>Invoice:
+      <a href='/invoices/<%= @invoice_items.highest_quantity %>'><%= @invoice_items.highest_quantity %></a>
+      </p>
+    </div>
+    <div class='lowest_quantity'>
+      <p>Lowest</br>Invoice:
+      <a href='/invoices/<%= @invoice_items.lowest_quantity %>'><%= @invoice_items.lowest_quantity %></a>
+      </p>
+    </div>
+  </div>
+</body>
+</html>

@@ -4,4 +4,10 @@ class Invoice < ActiveRecord::Base
   belongs_to :merchant
 
   validates_presence_of :merchant_id, :status
+
+  def total_price
+    invoice_items.map do |ii|
+      ii.quantity * ii.unit_price
+    end.sum
+  end
 end

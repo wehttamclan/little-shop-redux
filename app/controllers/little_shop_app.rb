@@ -75,6 +75,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/invoices/:id' do
+    
     @invoice = Invoice.find(params[:id])
     erb :'invoices/show'
   end

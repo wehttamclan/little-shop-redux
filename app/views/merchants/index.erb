@@ -22,36 +22,40 @@
       <a href='/merchants/new'><button id='create-merchant-button'>Create A New Merchant</button></a>
     </p>
   </header>
-  <% @merchants.each_with_index do |merchant, index| %>
-  <% if index.odd? %>
-  <ul id='grey-row'>
-    <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-      <div id='buttons-box'>
-        <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
-        <div id="delete-<%= merchant.id %>">
-          <form action='/merchants/<%= merchant.id %>' method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input id='delete-button' type="submit" value="Delete">
-          </form>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <% else %>
-  <ul>
-    <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
-      <div id='buttons-box'>
-        <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
-        <div id="delete-<%= merchant.id %>">
-          <form action='/merchants/<%= merchant.id %>' method="post">
-            <input type="hidden" name="_method" value="delete">
-            <input id='delete-button' type="submit" value="Delete">
-          </form>
-        </div>
-      </div>
-    </li>
-  </ul>
-  <% end %>
-  <% end %>
+  <section id="merchant-box">
+    <div id='merchant-inner-box'>
+      <% @merchants.each_with_index do |merchant, index| %>
+      <% if index.odd? %>
+      <ul id='grey-row'>
+        <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+          <div id='buttons-box'>
+            <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
+            <div id="delete-<%= merchant.id %>">
+              <form action='/merchants/<%= merchant.id %>' method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input id='delete-button' type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <% else %>
+      <ul>
+        <li id='merchant-row'><a id='merchant-name' href='/merchants/<%= merchant.id %>'><%= merchant.name %></a>
+          <div id='buttons-box'>
+            <a href="/merchants/<%= merchant.id %>/edit"><button id='edit-button'>Edit</button></a>
+            <div id="delete-<%= merchant.id %>">
+              <form action='/merchants/<%= merchant.id %>' method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input id='delete-button' type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+      <% end %>
+    </div>
+  </section>
 </body>
 </html>

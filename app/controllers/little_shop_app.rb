@@ -41,7 +41,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/merchants' do
-    @merchants = Merchant.all
+    @merchants = Merchant.all.includes(:items)
     erb :'merchants/index'
   end
 

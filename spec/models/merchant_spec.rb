@@ -11,6 +11,28 @@ RSpec.describe Merchant do
       expect(merchant).to be_valid
     end
   end
+  describe 'class methods' do
+    describe '.merchant_with_most_items' do
+      merchant1 = Merchant.create(name: 'Peters')
+      merchant2 = Merchant.create(name: 'Bricker')
+      merchant1.items.create(title: 'item1',
+                          description: 'something',
+                          price: 200,
+                          image: 'www.example.com')
+      merchant1.items.create(title: 'item2',
+                          description: 'something else',
+                          price: 333,
+                          image: 'www.realimage.com')
+      merchant2.items.create(title: '3',
+                          description: 'something',
+                          price: 200,
+                          image: 'www.example.com')
+
+      expected = merchant1
+
+      expect(Merchant.merchant_with_most_items).to eq(expected)
+    end
+  end
   describe 'instance methods' do
     describe '.avg_item_price' do
       it 'should return the average price of all items' do

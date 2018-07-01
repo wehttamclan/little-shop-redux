@@ -51,6 +51,26 @@ describe 'User' do
         expect(page).to have_content(expected)
       end
     end
+
+    it 'should see the total cost of each merchants items' do
+      merchant = Merchant.create(name: 'one')
+      item1 = merchant.items.create!(title: 'some item',
+                          description: 'something',
+                          price: 200,
+                          image: 'www.example.com')
+      item2 = merchant.items.create!(title: 'some other item',
+                          description: 'something else',
+                          price: 300,
+                          image: 'www.realimage.com')
+
+      expected = merchant.total_cost_of_items
+
+      visit "/merchants-dashboard"
+
+      within("#total-cost-#{merchant.id}") do
+        expect(page).to have_content(expected)
+      end
+    end
   end
 end
 # Average price of item for this merchant

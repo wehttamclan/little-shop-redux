@@ -4,6 +4,10 @@ class Merchant < ActiveRecord::Base
 
   validates_presence_of :name
 
+  def self.merchant_with_most_items
+
+  end
+
   def avg_item_price
     items.average(:price)
   end

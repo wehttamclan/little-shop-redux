@@ -74,13 +74,18 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
+  get '/merchants-dashboard' do
+    @merchants = Merchant.all
+    erb :'merchants/dashboard'
+  end
+
   get '/invoices' do
     @invoices = Invoice.all
     erb :'invoices/index'
   end
 
   get '/invoices/:id' do
-    
+
     @invoice = Invoice.find(params[:id])
     erb :'invoices/show'
   end

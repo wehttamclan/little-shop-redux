@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Merchants Dashboard</title>
+  </head>
+  <body>
+    <% @merchants.each do |merchant| %>
+    <p id='<%= merchant.name %>'><%= merchant.name %></p>
+    <p id='item-count-<%= merchant.id %>'>Item Count:</br><%= merchant.items.length %></p>
+    <p id='average-price-<%= merchant.id %>'>Average Item Price:</br><%= merchant.average_price %></p>
+    <% end %>
+  </body>
+</html>

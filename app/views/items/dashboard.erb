@@ -13,5 +13,19 @@
     <p>Avg Price Per Item</p>
     <p>$<%= @items.avg_price %></p>
   </div>
+  </div>
+  <div class='created'>
+    <p>Item by Age</p>
+    <div class='newest'>
+      <p>Newest</p>
+      <p>Item:</p>
+      <a href='/items/<%= @items.newest.id %>'><%= @items.newest.title %></a>
+    </div>
+    <div class='oldest'>
+      <p>Oldest</p>
+      <p>Item:</p>
+      <a href='/items/<%= @items.oldest.id %>'><%= @items.oldest.title %></a>
+    </div>
+  </div>
 </body>
 </html>

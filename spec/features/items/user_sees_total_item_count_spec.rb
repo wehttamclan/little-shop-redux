@@ -23,13 +23,13 @@ describe 'Class Methods' do
     it 'will show average price of items' do
       item1 = Item.create(title: 'some item',
                           description: 'something',
-                          price: 2.11,
+                          price: 600,
                           image: 'www.example.com')
       item2 = Item.create(title: 'some other item',
                           description: 'something else',
-                          price: 4.33,
+                          price: 400,
                           image: 'www.realimage.com')
-      price = 3.22
+      price = 5.00
 
       visit '/items-dashboard'
 

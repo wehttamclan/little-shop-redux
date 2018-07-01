@@ -7,3 +7,12 @@
     <input type="submit" value="Delete">
   </form>
 </div>
+
+<% @invoice.invoice_items.each do |ii| %>
+<ul id="invoice-<%= @invoice.id %>">
+  <li> <%= ii.quantity %></li>
+  <li> <%= ii.unit_price %></li>
+</ul>
+<% end %>
+
+<%= (@invoice.total_price)/100.0 %>

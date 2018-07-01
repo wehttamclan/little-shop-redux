@@ -565,6 +565,24 @@
         1,
         null,
         null,
+        null,
+        1,
+        1,
+        1,
+        0,
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        null,
+        0,
+        null,
+        0,
+        null,
+        null,
+        null,
         null
       ],
       "/Users/robmccluskey/turing/module2/current-projects/little-shop-redux/spec/models/item_spec.rb": [
@@ -661,6 +679,8 @@
         null
       ]
     },
+
     "timestamp": 1530407482
+
   }
 }

@@ -6,6 +6,11 @@ class LittleShopApp < Sinatra::Base
     erb :'items/index'
   end
 
+  get '/items-dashboard' do
+    @items = Item.all
+    erb :'items/dashboard'
+  end
+
   get '/items/new' do
     erb :'items/new'
   end

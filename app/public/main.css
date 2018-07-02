@@ -38,6 +38,12 @@ ul {
   font-family: 'Amiko';font-size: 22px;
 }
 
+footer {
+  height: 40px;
+  border: 1px solid black;
+  background-color: #9e9e9e8f;
+}
+
 #dashboard-link {
   font-size: 12px;
   margin-left: 8px;

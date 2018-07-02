@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Class Methods' do
+describe 'User' do
   context 'visits invoices dashboard' do
     it 'will show percentage of statuses' do
       invoice1 = Invoice.create(merchant_id: 1,
@@ -11,6 +11,7 @@ describe 'Class Methods' do
                           status: 'returned')
       invoice4 = Invoice.create(merchant_id: 1,
                           status: 'returned')
+
       invoice1.invoice_items.create(item_id: 123,
                                     quantity: 3,
                                     unit_price: 44)

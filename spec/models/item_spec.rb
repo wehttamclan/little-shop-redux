@@ -73,49 +73,90 @@ RSpec.describe Item do
     end
   end
   describe 'Class Methods' do
-    it 'will count all items' do
-      item1 = Item.create(title: 'some item',
-                          description: 'something',
-                          price: 200,
-                          image: 'www.example.com',
-                          created_at: '2018-07-01 17:18:48 UTC')
-      item2 = Item.create(title: 'some other item',
-                          description: 'something else',
-                          price: 333,
-                          image: 'www.realimage.com',
-                          created_at: '2018-07-01 17:18:50 UTC')
+    describe '.total_count' do
+      it 'will count all items' do
+        item1 = Item.create(title: 'some item',
+                            description: 'something',
+                            price: 200,
+                            image: 'www.example.com',
+                            created_at: '2018-07-01 17:18:48 UTC')
+        item2 = Item.create(title: 'some other item',
+                            description: 'something else',
+                            price: 333,
+                            image: 'www.realimage.com',
+                            created_at: '2018-07-01 17:18:50 UTC')
 
-      expect(Item.count).to eq(2)
+        expect(Item.count).to eq(2)
+      end
     end
-    it 'will show average price of all items' do
-      item1 = Item.create(title: 'some item',
-                          description: 'something',
-                          price: 200,
-                          image: 'www.example.com',
-                          created_at: '2018-07-01 17:18:48 UTC')
-      item2 = Item.create(title: 'some other item',
-                          description: 'something else',
-                          price: 400,
-                          image: 'www.realimage.com',
-                          created_at: '2018-07-01 17:18:50 UTC')
-      expected = 3.00
 
-      expect(Item.avg_price).to eq(expected)
+    describe '.avg_price' do
+      it 'will show average price of all items' do
+        item1 = Item.create(title: 'some item',
+                            description: 'something',
+                            price: 200,
+                            image: 'www.example.com',
+                            created_at: '2018-07-01 17:18:48 UTC')
+        item2 = Item.create(title: 'some other item',
+                            description: 'something else',
+                            price: 400,
+                            image: 'www.realimage.com',
+                            created_at: '2018-07-01 17:18:50 UTC')
+        expected = 3.00
+
+        expect(Item.avg_price).to eq(expected)
+      end
     end
-    it 'will show newest or oldest item' do
-      item1 = Item.create(title: 'some item',
-                          description: 'something',
-                          price: 200,
-                          image: 'www.example.com',
-                          created_at: '2018-07-01 17:18:48 UTC')
-      item2 = Item.create(title: 'some other item',
-                          description: 'something else',
-                          price: 333,
-                          image: 'www.realimage.com',
-                          created_at: '2018-07-01 17:18:50 UTC')
+    describe '.newest' do
+      it 'will return the newest item' do
+        item1 = Item.create(title: 'some item',
+                            description: 'something',
+                            price: 200,
+                            image: 'www.example.com',
+                            created_at: '2018-07-01 17:18:48 UTC')
+        item2 = Item.create(title: 'some other item',
+                            description: 'something else',
+                            price: 333,
+                            image: 'www.realimage.com',
+                            created_at: '2018-07-01 17:18:50 UTC')
 
-      expect(Item.newest).to eq(item2)
-      expect(Item.oldest).to eq(item1)
+        expect(Item.newest).to eq(item2)
+      end
+    end
+
+    describe '.oldest' do
+      it 'will return the oldest item' do
+        item1 = Item.create(title: 'some item',
+                            description: 'something',
+                            price: 200,
+                            image: 'www.example.com',
+                            created_at: '2018-07-01 17:18:48 UTC')
+        item2 = Item.create(title: 'some other item',
+                            description: 'something else',
+                            price: 333,
+                            image: 'www.realimage.com',
+                            created_at: '2018-07-01 17:18:50 UTC')
+
+        expect(Item.oldest).to eq(item1)
+      end
+    end
+
+    describe '.find_highest_priced_item' do
+      it 'should return the item with the highest price' do
+        item1 = Item.create(title: 'some item',
+                            description: 'something',
+                            price: 200,
+                            image: 'www.example.com',
+                            created_at: '2018-07-01 17:18:48 UTC')
+        item2 = Item.create(title: 'some other item',
+                            description: 'something else',
+                            price: 333,
+                            image: 'www.realimage.com',
+                            created_at: '2018-07-01 17:18:50 UTC')
+        expected = item2
+        
+        expect(Item.find_highest_priced_item).to eq(expected)
+      end
     end
   end
 end

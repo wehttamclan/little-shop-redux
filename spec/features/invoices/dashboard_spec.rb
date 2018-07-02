@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe 'Class Methods' do
+describe 'User' do
   context 'visits invoices dashboard' do
     it 'will show percentage of statuses' do
       invoice1 = Invoice.create(merchant_id: 1,
@@ -11,6 +11,20 @@ describe 'Class Methods' do
                           status: 'returned')
       invoice4 = Invoice.create(merchant_id: 1,
                           status: 'returned')
+
+      invoice1.invoice_items.create(item_id: 123,
+                                    quantity: 3,
+                                    unit_price: 44)
+      invoice2.invoice_items.create(item_id: 124,
+                                    quantity: 6,
+                                    unit_price: 74)
+      invoice3.invoice_items.create(item_id: 125,
+                                    quantity: 9,
+                                    unit_price: 94)
+      invoice3.invoice_items.create(item_id: 125,
+                                    quantity: 9,
+                                    unit_price: 94)
+
       pending  = 25
       shipped  = 25
       returned = 50
@@ -86,7 +100,7 @@ describe 'Class Methods' do
       lowest  = 1
 
       visit '/invoices-dashboard'
-save_and_open_page
+
       within('.quantity') do
         expect(page).to have_content('Quantity')
         expect(page).to have_content('Highest')

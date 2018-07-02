@@ -49,6 +49,15 @@ ul {
   justify-content: center;
 }
 
+#merchant-box {
+  display: flex;
+  justify-content: center;
+}
+
+#merchant-inner-box {
+  width: 85%
+}
+
 #create-merchant {
   display: flex;
   justify-content: center;

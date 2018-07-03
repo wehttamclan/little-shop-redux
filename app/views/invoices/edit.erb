@@ -1,6 +1,36 @@
+<p>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %>
 <form action="/invoices/<%= @invoice.id %>" method="post">
   <input type="hidden" name="_method" value="PUT"/>
-  <input type="text" name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/>
-  <input type="text" name="invoice[status]" value="<%= @invoice.status %>"/>
-  <input type='submit' value='Update Item'/>
+  <select disabled>
+    <option value="merchant"><%= @invoice.merchant.name %></option>
+  </select>
+  <select>
+    <% if @invoice.status == 'pending' %>
+      <option value="status" selected>Pending</option>
+      <option value="status">Shipped</option>
+      <option value="status">Returned</option>
+    <% elsif @invoice.status == 'shipped' %>
+      <option value="status">Pending</option>
+      <option value="status" selected>Shipped</option>
+      <option value="status">Returned</option>
+    <% else %>
+      <option value="status">Pending</option>
+      <option value="status">Shipped</option>
+      <option value="status" selected>Returned</option>
+    <% end %>
+  </select>
+  <button><a href='/invoices/<%= @invoice.id %>'>Cancel</a></button>
+  <input type='submit' value='Update Invoice'/>
 </form>
+<ul>
+  <p>Item ID</p>
+  <p>Item Title</p>
+  <p>Quantity</p>
+  <p>Unit Price</p>
+  <% @invoice.invoice_items.each do |invoice_item| %>
+    <li><a href='/items/<%= invoice_item.item_id %>'><%= invoice_item.item_id %></a></li>
+    <li><p><%= invoice_item.item.title %></p></li>
+    <li><p><%= invoice_item.quantity %></p></li>
+    <li><p><%= invoice_item.unit_price %></p></li>
+  <% end %>
+</ul>

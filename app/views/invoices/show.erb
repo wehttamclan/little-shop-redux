@@ -1,16 +1,24 @@
-<h1>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %></h1>
-<p>Invoice Total: $<%= (@invoice.total_price)/100.0 %></p>
-<a href="/invoices/<%= @invoice.id %>/edit"><button>Edit</button></a>
-<div class="delete-<%= @invoice.id %>">
-  <form action='/invoices/<%= @invoice.id %>' method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-  </form>
-</div>
-<a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a>
+<header id='header'>
+  <p id='merchant-show-name'>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %> - $<%= (@invoice.total_price)/100.0 %></p>
+  <p id='create-merchant' >
+    <div class='item-buttons'>
+      <form action='/invoices/<%= @invoice.id %>/edit' method="get">
+        <input id='edit-item-button' type="submit" value="Edit">
+      </form>
+      <form class="delete-<%= @invoice.id %>" action='/invoices/<%= @invoice.id %>' method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+      </form>
+    </p>
+  </header>
+<a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a></br></br>
+<div class="items-container">
 <% @invoice.invoice_items.each do |ii| %>
-<ul id="invoice-<%= @invoice.id %>">
-  <li> <%= ii.quantity %></li>
-  <li> <%= ii.unit_price %></li>
+<ul class='item-box' id="invoice-<%= @invoice.id %>">
+  <li><%= ii.item.id %></li>
+  <li><%= ii.item.title %></li>
+  <li><%= ii.quantity %></li>
+  <li><%= '%.2f' % (ii.unit_price / 100.0) %></li>
 </ul>
 <% end %>
+</div>

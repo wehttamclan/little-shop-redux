@@ -1,6 +1,26 @@
+<<<<<<< HEAD
+<header id='header'>
+  <p id='edit-merchant-logo'>Edit <%= @merchant.name %></p>
+</header>
+<div id="create-box">
+  <div class="create-contents">
+    <form action="/merchants/<%= @merchant.id %>" method="post">
+      <div class="merchant-edit-field-box">
+        Name</br><input type="hidden" name="_method" value="PUT"/>
+        <input id='merchant-edit-field' type="text" name="merchant[name]" value="<%= @merchant.name %>"/>
+      </div>
+      <div id='merchant-edit-buttons'>
+        <input class='merchant-edit-new-cancel-buttons' input type='submit' value='Cancel' href="/merchants"/>
+        <input class='merchant-edit-new-create-update-buttons' type='submit' value='Update Merchant'/>
+      </div>
+    </form>
+  </div>
+</div>
+=======
 <form action="/merchants/<%= @merchant.id %>" method="post">
   <input type="hidden" name="_method" value="PUT"/>
   <input type="text" name="merchant[name]" value="<%= @merchant.name %>"/>
   <button><a href='/merchants'>Cancel</a></button>
   <input type='submit' value='Update Merchant'/>
 </form>
+>>>>>>> 70b3bd5ef4df93e3bc142f00287c6fcfda8f7776

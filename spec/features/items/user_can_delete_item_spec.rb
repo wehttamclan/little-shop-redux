@@ -4,15 +4,16 @@ describe 'User' do
   describe 'visits /items' do
     describe 'clicks on delete' do
       it 'should delete specific item' do
-        item1 = Item.create(title: 'some item',
+        merchant = Merchant.create(name: 'ian')
+        item1 = merchant.items.create(title: 'some item',
                             description: 'something',
                             price: 200,
                             image: 'www.example.com')
-        item2 = Item.create(title: 'some other item',
+        item2 = merchant.items.create(title: 'some other item',
                             description: 'something else',
                             price: 333,
                             image: 'www.realimage.com')
-        item3 = Item.create(title: 'brush',
+        item3 = merchant.items.create(title: 'brush',
                             description: 'bristles',
                             price: 4,
                             image: 'www.brushpic.com')
@@ -39,18 +40,19 @@ describe 'User' do
   describe 'visits /items/show' do
     describe 'clicks on delete' do
       it 'should delete specific item' do
-        item1 = Item.create(title: 'some item',
-                            description: 'something',
-                            price: 200,
-                            image: 'www.example.com')
-        item2 = Item.create(title: 'some other item',
-                            description: 'something else',
-                            price: 333,
-                            image: 'www.realimage.com')
-        item3 = Item.create(title: 'brush',
-                            description: 'bristles',
-                            price: 4,
-                            image: 'www.brushpic.com')
+        merchant = Merchant.create(name: 'ian')
+        item1 = merchant.items.create(title: 'some item',
+                                      description: 'something',
+                                      price: 200,
+                                      image: 'www.example.com')
+        item2 = merchant.items.create(title: 'some other item',
+                                      description: 'something else',
+                                      price: 333,
+                                      image: 'www.realimage.com')
+        item3 = merchant.items.create(title: 'brush',
+                                      description: 'bristles',
+                                      price: 4,
+                                      image: 'www.brushpic.com')
 
         visit '/items'
 

@@ -12,6 +12,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/items-dashboard' do
     @items = Item.all
+    @avg_price_of_items = @items.avg_price
     erb :'items/dashboard'
   end
 
@@ -26,6 +27,7 @@ class LittleShopApp < Sinatra::Base
 
   get '/items/:id' do
     @item = Item.find(params[:id])
+    @items_merchant = @item.merchant
     erb :'items/show'
   end
 
@@ -82,6 +84,7 @@ class LittleShopApp < Sinatra::Base
     @merchants = Merchant.all.includes(:items)
     @merchant_with_most_items = Merchant.find_merchant_with_most_items
     @merchant_name_with_highest_priced_item = Item.find_highest_priced_item.merchant.name
+    @merchant_with_highest_price_item = Item.find_highest_priced_item.merchant
     erb :'merchants/dashboard'
   end
 

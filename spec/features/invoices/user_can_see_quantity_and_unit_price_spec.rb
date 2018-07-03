@@ -9,7 +9,7 @@ describe 'User' do
                          merchant_id: merchant.id,
                          description: 'bristles',
                          price: 4,
-                        image: 'www.brushpic.com')
+                         image: 'www.brushpic.com')
       invoice_item = InvoiceItem.create(item_id: item.id,
                          quantity: 1,
                          unit_price: 23,
@@ -29,7 +29,7 @@ describe 'User' do
                          merchant_id: merchant.id,
                          description: 'bristles',
                          price: 4,
-                        image: 'www.brushpic.com')
+                         image: 'www.brushpic.com')
       invoice_item = InvoiceItem.create(item_id: item.id,
                          quantity: 1,
                          unit_price: 23,

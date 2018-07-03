@@ -1,6 +1,10 @@
 require 'pry'
 
 class LittleShopApp < Sinatra::Base
+  get '/' do
+    erb :'littleshop/dashboard'
+  end
+
   get '/items' do
     @items = Item.all
     erb :'items/index'

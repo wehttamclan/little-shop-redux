@@ -7,17 +7,17 @@ RSpec.describe do
                          price: 100,
                          image: 'not found')
     @item2 = Item.create(id: 20,
-                         title: 'Item One',
+                         title: 'Item Two',
                          description: 'description',
                          price: 10,
                          image: 'not found')
     @item3 = Item.create(id: 30,
-                         title: 'Item One',
+                         title: 'Item Three',
                          description: 'description',
                          price: 44,
                          image: 'not found')
     @item4 = Item.create(id: 40,
-                         title: 'Item One',
+                         title: 'Item Four',
                          description: 'description',
                          price: 44,
                          image: 'not found')

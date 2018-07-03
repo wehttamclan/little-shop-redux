@@ -1,24 +1,32 @@
-
-  <h1>Items Dashboard</h1>
+<header id='header'>
+  <p id='item-dashboard-logo'>Items Dashboard</p>
+</header>
+<section class='dashboard-boxes'>
   <div class='item_count'>
-    <p>Total Item Count</p>
-    <p><%= @items.length %></p>
+    <div class="item-count-box">
+      <p>Total Item Count</p>
+      <p class='item-length'><%= @items.length %></p>
+    </div>
   </div>
   <div class='avg_price'>
-    <p>Avg Price Per Item</p>
-    <p>$<%= '%.2f' % @items.avg_price %></p>
-  </div>
+    <div class="item-count-box">
+      <p>Avg Price Per Item</p>
+      <p class='item-length'>$<%= '%.2f' % @avg_price_of_items %></p>
+    </div>
   </div>
   <div class='created'>
-    <p>Item by Age</p>
-    <div class='newest'>
-      <p>Newest</p>
-      <p>Item:</p>
-      <a href='/items/<%= @items.newest.id %>'><%= @items.newest.title %></a>
-    </div>
-    <div class='oldest'>
-      <p>Oldest</p>
-      <p>Item:</p>
-      <a href='/items/<%= @items.oldest.id %>'><%= @items.oldest.title %></a>
+    <div class="item-by-age-box">
+      <p id='item-by-age'>Item by Age</p>
+      <div class='newest'>
+        <p id='newest'>Newest</p>
+        <p>Item:</p>
+        <a href='/items/<%= @items.newest.id %>'><%= @items.newest.title %></a>
+      </div>
+      <div class='oldest'>
+        <p>Oldest</p>
+        <p>Item:</p>
+        <a href='/items/<%= @items.oldest.id %>'><%= @items.oldest.title %></a>
+      </div>
     </div>
   </div>
+</section>

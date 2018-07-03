@@ -46,6 +46,7 @@ footer {
   font-family: 'Raleway', sans-serif;
   font-size: 10px;
   margin-top: 5px;
+  text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -54,8 +55,51 @@ footer {
 .item-buttons {
   display: flex;
   justify-content: center;
-  justify-content: space-evenly;
   flex-direction: row;
+}
+
+.tulip-image {
+  border-radius: 10%;
+  height: 200px;
+  width: 180px;
+}
+
+.item-box {
+  flex-wrap: wrap;
+  height: 240px;
+  width: 180px;
+  margin: 40px;
+}
+
+.item-count-box {
+  border: 1px solid black;
+  height: 200px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-length {
+  margin-top: 20px;
+}
+
+.item-by-age-box {
+  border: 1px solid;
+  height: 200px;
+  width: 180px;
+}
+
+.dashboard-boxes {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
+  margin-bottom: 80px;
+}
+
+#item-by-age {
+  margin-top: 30px;
 }
 
 #little-shop {
@@ -84,6 +128,21 @@ footer {
   font-size: 20px;
   display: flex;
   justify-content: center;
+}
+
+#item-dashboard-logo {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+#merchant-show-name {
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
 #merchant-box {
@@ -156,22 +215,6 @@ footer {
   align-items: flex-end;
   justify-content: space-between;
   margin-top: 230px;
-}
-
-#item-box {
-  flex-wrap: wrap;
-  height: 240px;
-  width: 180px;
-  margin: 40px;
-}
-
-#tulip-image {
-  border-radius: 10%;
-  height: 200px;
-  width: 180px;
-}
-
-#delete-item-button {
 }
 
 #edit-item-button {

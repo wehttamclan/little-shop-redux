@@ -1,6 +1,6 @@
 
 <header id='header'>
-  <p id='merchant-logo'><%= @merchant.name%></p>
+  <p id='merchant-show-name'><%= @merchant.name%></p>
   <p id='create-merchant' >
     <div class='item-buttons'>
       <form action='/merchants/<%= @merchant.id %>/edit' method="get">
@@ -12,11 +12,24 @@
       </form>
     </p>
   </header>
-  <h1><%= @merchant.name %></h1>
-  <a href="/merchants/<%= @merchant.id %>/edit"><button>Edit</button></a>
-  <div id='delete-item-button'>
-    <form action='/merchants/<%= @merchant.id %>' method="post">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
-    </form>
-  </div>
+  <section class='items-container'>
+  <% @merchant.items.each do |item| %>
+  <ul class='item-box'>
+    <img class='tulip-image' src='/tulips.jpg' alt="yellow-tulip">
+    <div class='item-attributes'>
+      <li><a href='/items/<%= item.id %>'><%= item.title %></a></li></br>
+      <li>$<%= '%.2f' % (item.price / 100.0) %></li></br>
+      <div class='item-buttons'>
+        <form action='/items/<%= item.id %>/edit' method="get">
+          <input id='edit-item-button' type="submit" value="Edit">
+        </form>
+        <div id="delete-<%= item.id %>">
+          <form action='/items/<%= item.id %>' method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input id='delete-item-button' type="submit" value="Delete">
+          </form>
+        </div>
+      </div>
+    </ul>
+  <% end %>
+</section>

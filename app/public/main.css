@@ -7,6 +7,12 @@ ul {
   list-style-type: none;
 }
 
+footer {
+  height: 40px;
+  border: 1px solid black;
+  background-color: #9e9e9e8f;
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -26,6 +32,31 @@ ul {
   padding: 8px 4px;
 }
 
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin: 0px;
+  background-color: #e7f1e8;
+}
+
+.item-attributes {
+  font-family: 'Raleway', sans-serif;
+  font-size: 10px;
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.item-buttons {
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+}
+
 #little-shop {
   position: absolute;
   top: 7px;
@@ -37,12 +68,6 @@ ul {
   border: 1px solid black;
   background-color: rgba(56, 14, 238, 0.06);
   font-family: 'Amiko';font-size: 22px;
-}
-
-footer {
-  height: 40px;
-  border: 1px solid black;
-  background-color: #9e9e9e8f;
 }
 
 #right-nav-links {
@@ -75,6 +100,7 @@ footer {
 }
 
 #create-merchant-button {
+  margin-top: 10px;
   padding: 3px;
 }
 
@@ -129,4 +155,24 @@ footer {
   align-items: flex-end;
   justify-content: space-between;
   margin-top: 230px;
+}
+
+#item-box {
+  flex-wrap: wrap;
+  height: 240px;
+  width: 180px;
+  margin: 40px;
+}
+
+#tulip-image {
+  border-radius: 10%;
+  height: 200px;
+  width: 180px;
+}
+
+#delete-item-button {
+}
+
+#edit-item-button {
+  margin-right: 10px;
 }

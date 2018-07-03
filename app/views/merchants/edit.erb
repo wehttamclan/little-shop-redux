@@ -2,7 +2,7 @@
   <p id='edit-merchant-logo'>Edit <%= @merchant.name %></p>
 </header>
 <div id="create-box">
-  <div id="create-contents">
+  <div class="create-contents">
     <form action="/merchants/<%= @merchant.id %>" method="post">
       <div class="merchant-edit-field-box">
         Name</br><input type="hidden" name="_method" value="PUT"/>

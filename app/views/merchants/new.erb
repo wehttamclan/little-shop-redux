@@ -2,12 +2,14 @@
       <p id='merchant-logo'>Create New Merchant</p>
     </header>
     <div id="create-box">
-    <div id="create-contents">
+    <div class="create-contents">
     <form action="/merchants" method="post">
+      <div class="merchant-edit-field-box">
       Name</br><input type="text" name="merchant[name]"></br>
-      <div id="cancel-create-buttons">
-      <a href="/merchants"><button>Cancel</button></a>
-      <input type="submit" value="Create Merchant">
+    </div>
+    <div id='merchant-edit-buttons'>
+      <input class='merchant-edit-new-cancel-buttons' input type='submit' value='Cancel' href="/merchants"/>
+      <input class='merchant-edit-new-create-update-buttons' type="submit" value="Create Merchant">
     </div>
     </form>
   </div>

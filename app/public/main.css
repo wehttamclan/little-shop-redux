@@ -255,7 +255,7 @@ footer {
   justify-content: center;
 }
 
-#create-contents {
+.create-contents {
   margin-bottom: 5px;
   border-radius: 2%;
   background-color: #faddff;

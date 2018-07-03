@@ -14,12 +14,12 @@
       <li><%= item.price %></li></br>
       <div class='item-buttons'>
         <form action='/items/<%= item.id %>/edit' method="get">
-          <input type="submit" value="Edit">
+          <input id='edit-item-button' type="submit" value="Edit">
         </form>
         <div id="delete-<%= item.id %>">
           <form action='/items/<%= item.id %>' method="post">
             <input type="hidden" name="_method" value="delete">
-            <input type="submit" value="Delete">
+            <input id='delete-item-button' type="submit" value="Delete">
           </form>
         </div>
       </div>

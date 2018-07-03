@@ -10,7 +10,7 @@ describe 'User' do
       item2 = Item.create(title: 'some other item',
                           description: 'something else',
                           price: 333,
-                          image: 'www.realimage.com')
+                          image: 'tulip.jpg')
       title = item1.title
       price = item2.price
       image = item2.image
@@ -19,7 +19,6 @@ describe 'User' do
 
       expect(page).to have_content(title)
       expect(page).to have_content(price)
-      expect(page).to have_content(image)
     end
   end
 end

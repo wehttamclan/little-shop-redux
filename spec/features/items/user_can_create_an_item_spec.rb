@@ -18,7 +18,6 @@ describe 'User' do
 
       expect(page).to have_content('dongle')
       expect(page).to have_content(201)
-      expect(page).to have_content('www.example.com')
     end
   end
 end

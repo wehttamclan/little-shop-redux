@@ -107,6 +107,7 @@ RSpec.describe Item do
         expect(Item.avg_price).to eq(expected)
       end
     end
+    
     describe '.newest' do
       it 'will return the newest item' do
         item1 = Item.create(title: 'some item',
@@ -154,7 +155,7 @@ RSpec.describe Item do
                             image: 'www.realimage.com',
                             created_at: '2018-07-01 17:18:50 UTC')
         expected = item2
-        
+
         expect(Item.find_highest_priced_item).to eq(expected)
       end
     end

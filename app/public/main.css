@@ -98,6 +98,44 @@ footer {
   margin-bottom: 80px;
 }
 
+.merchant-edit-field-box {
+  margin-left: 20px;
+  margin-top: 10px;
+  font-family: Raleway;
+}
+
+.merchant-edit-new-cancel-buttons {
+  height: 50px;
+  width: 150px;
+  border-radius: 10%;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 11px black;
+  background-color: #fb6767;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.merchant-edit-new-create-update-buttons {
+  height: 50px;
+  width: 150px;
+  border-radius: 10%;
+  margin-bottom: 20px;
+  box-shadow: 4px 4px 11px black;
+  background-color: #caff86;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#merchant-edit-buttons {
+  height: 220px;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
 #item-by-age {
   margin-top: 30px;
 }
@@ -125,10 +163,10 @@ footer {
 }
 
 #edit-merchant-logo {
-margin-top: 30px;
-font-size: 20px;
-display: flex;
-justify-content: center;
+  margin-top: 30px;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 #merchant-logo {
@@ -164,6 +202,12 @@ justify-content: center;
 #create-merchant {
   display: flex;
   justify-content: center;
+}
+
+#merchant-edit-field {
+  width: 95%;
+  margin-top: 5px;
+  height: 30px;
 }
 
 #create-merchant-button {
@@ -206,11 +250,15 @@ justify-content: center;
 }
 
 #create-box {
+  background-color: #ddffff;
   display: flex;
   justify-content: center;
 }
 
 #create-contents {
+  margin-bottom: 5px;
+  border-radius: 2%;
+  background-color: #faddff;
   width: 80%;
   border: 1px solid black;
   height: 300px;

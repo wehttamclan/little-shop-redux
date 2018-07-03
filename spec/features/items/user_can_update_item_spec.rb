@@ -3,10 +3,11 @@ require 'spec_helper'
 describe 'User' do
   describe 'visits /items/:id/edit' do
     it 'should see a form, update a item and land on item show' do
-      test_item = Item.create(title: 'dongle',
-                              description: 'something',
-                              price: 200,
-                              image: 'tulip.jpg')
+      merchant = Merchant.create(name: 'ian')
+      test_item = merchant.items.create(title: 'dongle',
+                                        description: 'something',
+                                        price: 200,
+                                        image: 'tulip.jpg')
 
       visit('/items')
 

@@ -1,12 +1,16 @@
-<h1>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %></h1>
-<p>Invoice Total: $<%= (@invoice.total_price)/100.0 %></p>
-<a href="/invoices/<%= @invoice.id %>/edit"><button>Edit</button></a>
-<div class="delete-<%= @invoice.id %>">
-  <form action='/invoices/<%= @invoice.id %>' method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-  </form>
-</div>
+<header id='header'>
+  <p id='merchant-show-name'>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %> - $<%= (@invoice.total_price)/100.0 %></p>
+  <p id='create-merchant' >
+    <div class='item-buttons'>
+      <form action='/invoices/<%= @invoice.id %>/edit' method="get">
+        <input id='edit-item-button' type="submit" value="Edit">
+      </form>
+      <form class="delete-<%= @invoice.id %>" action='/invoices/<%= @invoice.id %>' method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+      </form>
+    </p>
+  </header>
 <a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a>
 <% @invoice.invoice_items.each do |ii| %>
 <ul id="invoice-<%= @invoice.id %>">

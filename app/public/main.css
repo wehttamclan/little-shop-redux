@@ -171,6 +171,10 @@ footer {
   background-color: #fdf9d3;
 }
 
+.item-show-container {
+  display: flex;
+}
+
 #merchant-edit-buttons {
   height: 220px;
   display: flex;

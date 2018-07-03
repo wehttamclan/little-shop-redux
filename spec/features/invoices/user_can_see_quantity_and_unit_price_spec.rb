@@ -3,54 +3,61 @@ require 'spec_helper'
 describe 'User' do
   describe 'visits invoices show page' do
     it 'should see quantity of each item' do
-      test_invoice = Invoice.create(merchant_id: 1,
-                                    status: 'pending')
+      merchant = Merchant.create!(name: 'hi')
+      invoice = merchant.invoices.create!(status: 'Pending')
+      item = Item.create(title: 'brush',
+                         merchant_id: merchant.id,
+                         description: 'bristles',
+                         price: 4,
+                        image: 'www.brushpic.com')
+      invoice_item = InvoiceItem.create(item_id: item.id,
+                         quantity: 1,
+                         unit_price: 23,
+                         invoice_id: invoice.id)
 
-      test_invoice_item = InvoiceItem.create(item_id: 24355,
-                                             invoice_id: 1,
-                                             quantity: 3,
-                                             unit_price: 44)
+      expected_quantity = invoice_item.quantity
 
-      expected_quantity = test_invoice_item.quantity
-
-      visit("/invoices/#{test_invoice.id}")
+      visit("/invoices/#{invoice.id}")
 
       expect(page).to have_content(expected_quantity)
     end
 
     it 'should see unit_price of each item' do
-      test_invoice = Invoice.create(merchant_id: 1,
-                                    status: 'pending')
+      merchant = Merchant.create!(name: 'hi')
+      invoice = merchant.invoices.create!(status: 'Pending')
+      item = Item.create(title: 'brush',
+                         merchant_id: merchant.id,
+                         description: 'bristles',
+                         price: 4,
+                        image: 'www.brushpic.com')
+      invoice_item = InvoiceItem.create(item_id: item.id,
+                         quantity: 1,
+                         unit_price: 23,
+                         invoice_id: invoice.id)
 
-      test_invoice_item = InvoiceItem.create(item_id: 24355,
-                                             invoice_id: 1,
-                                             quantity: 3,
-                                             unit_price: 44)
+      expected_unit_price = invoice_item.unit_price
 
-      expected_unit_price = test_invoice_item.unit_price
-
-      visit("/invoices/#{test_invoice.id}")
+      visit("/invoices/#{invoice.id}")
 
       expect(page).to have_content(expected_unit_price)
     end
 
     it 'should see total_price of invoice' do
-      test_invoice = Invoice.create(merchant_id: 1,
-                                    status: 'pending')
+      merchant = Merchant.create!(name: 'hi')
+      invoice = merchant.invoices.create!(status: 'Pending')
+      item = Item.create(title: 'brush',
+                         merchant_id: merchant.id,
+                         description: 'bristles',
+                         price: 4,
+                        image: 'www.brushpic.com')
+      InvoiceItem.create(item_id: item.id,
+                         quantity: 1,
+                         unit_price: 23,
+                         invoice_id: invoice.id)
 
-      invoice_item_1 = InvoiceItem.create(item_id: 24355,
-                                             invoice_id: 1,
-                                             quantity: 1,
-                                             unit_price: 100)
+      expected = (invoice.total_price) / 100.0
 
-      invoice_item_2 = InvoiceItem.create(item_id: 23,
-                                             invoice_id: 1,
-                                             quantity: 3,
-                                             unit_price: 200)
-
-      expected = (test_invoice.total_price) / 100.0
-
-      visit("/invoices/#{test_invoice.id}")
+      visit("/invoices/#{invoice.id}")
 
       expect(page).to have_content(expected)
     end

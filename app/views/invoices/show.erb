@@ -7,7 +7,7 @@
     <input type="submit" value="Delete">
   </form>
 </div>
-<a href='/merchants/<%= @invoice.merchant.id %>'><%= @invoice.merchant.name %></a>
+<a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a>
 <% @invoice.invoice_items.each do |ii| %>
 <ul id="invoice-<%= @invoice.id %>">
   <li> <%= ii.quantity %></li>

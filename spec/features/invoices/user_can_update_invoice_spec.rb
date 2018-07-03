@@ -2,24 +2,28 @@ require 'spec_helper'
 
 describe 'User' do
   describe 'visits /invoices/:id/edit' do
-    it 'should see a form, update a invoice and land on invoice show' do
-      test_invoice = Invoice.create(merchant_id: 1,
-                               status: 'something')
+    it 'should see a form and update invoice status' do
+      merchant = Merchant.create!(name: 'hi')
+      invoice = merchant.invoices.create!(status: 'Pending')
+      item1 = Item.create(title: 'brush',
+                          merchant_id: merchant.id,
+                          description: 'bristles',
+                          price: 4,
+                          image: 'www.brushpic.com')
+      invoice_item = InvoiceItem.create(item_id: item1.id,
+                                        quantity: 1,
+                                        unit_price: 23,
+                                        invoice_id: invoice.id)
 
-      visit('/invoices')
+      visit "/invoices/#{invoice.id}/edit"
 
-      click_link 'Edit'
+      select('Pending')
 
-      expect(current_path).to eq("/invoices/#{test_invoice.id}/edit")
+      click_button 'Update Invoice'
 
-      # fill_in 'invoice[merchant_id]', with: 2
-      fill_in 'invoice[status]', with: 'something else'
+      expect(page).to have_content('Pending')
 
-      click_button 'Update Item'
-
-      expect(current_path).to eq("/invoices/#{test_invoice.id}")
-      expect(page).to have_content(1)
-      expect(page).to have_content('something else')
+      expect(current_path).to eq("/invoices/#{invoice.id}")
     end
   end
 end

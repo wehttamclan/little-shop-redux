@@ -1,27 +1,31 @@
 <p>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %>
-<form action="/invoices/<%= @invoice.id %>" method="post">
-  <input type="hidden" name="_method" value="PUT"/>
+  <p>Merchant</p>
   <select disabled>
     <option value="merchant"><%= @invoice.merchant.name %></option>
   </select>
-  <select>
-    <% if @invoice.status == 'pending' %>
-      <option value="status" selected>Pending</option>
-      <option value="status">Shipped</option>
-      <option value="status">Returned</option>
-    <% elsif @invoice.status == 'shipped' %>
-      <option value="status">Pending</option>
-      <option value="status" selected>Shipped</option>
-      <option value="status">Returned</option>
-    <% else %>
-      <option value="status">Pending</option>
-      <option value="status">Shipped</option>
-      <option value="status" selected>Returned</option>
-    <% end %>
-  </select>
-  <button><a href='/invoices/<%= @invoice.id %>'>Cancel</a></button>
-  <input type='submit' value='Update Invoice'/>
-</form>
+<section id='status-dropdown'>
+  <form action="/invoices/<%= @invoice.id %>" method="post">
+    <p>Status</p>
+    <select name='invoice[status]' id='status'>
+      <% if @invoice.status == 'pending' %>
+        <option value="pending" selected>Pending</option>
+        <option value="shipped">Shipped</option>
+        <option value="returned">Returned</option>
+      <% elsif @invoice.status == 'shipped' %>
+        <option value="pending">Pending</option>
+        <option value="shipped" selected>Shipped</option>
+        <option value="returned">Returned</option>
+      <% else %>
+        <option value="pending">Pending</option>
+        <option value="shipped">Shipped</option>
+        <option value="returned" selected>Returned</option>
+      <% end %>
+    </select>
+    <button><a href='/invoices/<%= @invoice.id %>'>Cancel</a></button>
+    <input type="hidden" name="_method" value="patch"/>
+    <input type='submit' value='Update Invoice'/>
+  </form>
+</section>
 <ul>
   <p>Item ID</p>
   <p>Item Title</p>

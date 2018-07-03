@@ -10,6 +10,8 @@ describe 'User' do
       fill_in 'item[price]', with: 201
       fill_in 'item[image]', with: 'www.example.com'
 
+      expected = 2.01
+
       expect(Item.count).to eq(0)
       click_on 'Submit'
 
@@ -17,7 +19,7 @@ describe 'User' do
       expect(Item.count).to eq(1)
 
       expect(page).to have_content('dongle')
-      expect(page).to have_content(201)
+      expect(page).to have_content(expected)
     end
   end
 end

@@ -12,7 +12,7 @@ describe 'User' do
                           price: 333,
                           image: 'tulip.jpg')
       title = item1.title
-      price = item2.price
+      price = (item2.price) / 100.0
       image = item2.image
 
       visit('/items')

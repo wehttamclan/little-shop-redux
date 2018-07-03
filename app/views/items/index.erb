@@ -11,7 +11,7 @@
     <img id='tulip-image' src='tulips.jpg' alt="yellow-tulip">
     <div class='item-attributes'>
       <li><a href='/items/<%= item.id %>'><%= item.title %></a></li></br>
-      <li><%= item.price %></li></br>
+      <li>$<%= '%.2f' % (item.price / 100.0) %></li></br>
       <div class='item-buttons'>
         <form action='/items/<%= item.id %>/edit' method="get">
           <input id='edit-item-button' type="submit" value="Edit">

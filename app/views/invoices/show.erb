@@ -11,10 +11,12 @@
       </form>
     </p>
   </header>
-<a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a>
+<a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a></br></br>
 <% @invoice.invoice_items.each do |ii| %>
 <ul id="invoice-<%= @invoice.id %>">
-  <li> <%= ii.quantity %></li>
-  <li> <%= ii.unit_price %></li>
+  <li><%= ii.item.id %></li>
+  <li><%= ii.item.title %></li>
+  <li><%= ii.quantity %></li>
+  <li><%= '%.2f' % (ii.unit_price / 100.0) %></li></br>
 </ul>
 <% end %>

@@ -1,47 +1,48 @@
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>Invoices</title>
-</head>
-<body>
-  <h1>Invoices Dashboard</h1>
-  <div class='status'>
-    <p>Status Percentage</p>
-    <div class='pending'>
-      <p>Pending</br><%= "#{@invoices.pending}%" %></p>
-    </div>
-    <div class='shipped'>
-      <p>Shipped</br><%= "#{@invoices.shipped}%" %></p>
-    </div>
-    <div class='returned'>
-      <p>Returned</br><%= "#{@invoices.returned}%" %></p>
-    </div>
+<header id='header'>
+  <p id='item-dashboard-logo'>Invoices Dashboard</p>
+</header>
+<section class='dashboard-boxes'>
+  <div class='item-count-box'>
+<div class='status'>
+  <p>Status Percentage</p>
+  <div class='pending'>
+    <p>Pending</br><%= "#{@invoices.pending}%" %></p>
   </div>
-  <div class='prices'>
-    <p>Unit Prices</p>
-    <div class='highest_price'>
-      <p>Highest</br>Invoice:
-        <a href='/invoices/<%= @invoice_items.highest_price %>'><%= @highest_price %></a>
-      </p>
-    </div>
-    <div class='lowest_price'>
-      <p>Lowest</br>Invoice:
+  <div class='shipped'>
+    <p>Shipped</br><%= "#{@invoices.shipped}%" %></p>
+  </div>
+  <div class='returned'>
+    <p>Returned</br><%= "#{@invoices.returned}%" %></p>
+  </div>
+</div>
+</div>
+<div class='item-by-age-box'>
+<div class='prices'>
+  <p>Unit Prices</p>
+  <div class='highest_price'>
+    <p>Highest</br>Invoice:
+      <a href='/invoices/<%= @invoice_items.highest_price %>'><%= @highest_price %></a>
+    </p>
+  </div>
+  <div class='lowest_price'>
+    <p>Lowest</br>Invoice:
       <a href='/invoices/<%= @invoice_items.lowest_price %>'><%= @lowest_price %></a>
-      </p>
-    </div>
+    </p>
   </div>
-  <div class='quantity'>
-    <p>Quantity</p>
-    <div class='highest_quantity'>
-      <p>Highest</br>Invoice:
+</div>
+</div>
+<div class='item-by-age-box'>
+<div class='quantity'>
+  <p>Quantity</p>
+  <div class='highest_quantity'>
+    <p>Highest</br>Invoice:
       <a href='/invoices/<%= @invoice_items.highest_quantity %>'><%= @highest_quantity %></a>
-      </p>
-    </div>
-    <div class='lowest_quantity'>
-      <p>Lowest</br>Invoice:
-      <a href='/invoices/<%= @invoice_items.lowest_quantity %>'><%= @lowest_quantity %></a>
-      </p>
-    </div>
+    </p>
   </div>
-</body>
-</html>
+  <div class='lowest_quantity'>
+    <p>Lowest</br>Invoice:
+      <a href='/invoices/<%= @invoice_items.lowest_quantity %>'><%= @lowest_quantity %></a>
+    </p>
+  </div>
+</div>
+</section>

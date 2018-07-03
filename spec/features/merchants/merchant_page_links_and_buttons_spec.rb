@@ -23,32 +23,52 @@ RSpec.describe do
                                                     quantity: 50,
                                                     unit_price: 10)
   end
+
   context 'Merchant dashboard page' do
     it 'shows the link to merchant with most items' do
+
       visit '/merchants-dashboard'
-      click_link 'Merchant Two'
+
+      within('.most-items') do
+        click_link 'Merchant Two'
+      end
 
       expect(current_path).to eq('/merchants/2')
     end
+
     it 'shows the link to merchant with highest priced items' do
+
       visit '/merchants-dashboard'
-      click_link 'Merchant One'
+
+      within('.highest-item') do
+        click_link 'Merchant One'
+      end
 
       expect(current_path).to eq('/merchants/1')
     end
   end
+
   context 'edit page' do
     it 'can cancel the update' do
-      visit "/merchants/#{@merchant1.id}/edit"
-      click_link('Cancel')
 
-      expect(current_path).to eq('/merchants')
+      visit "/merchants/#{@merchant1.id}/edit"
+
+      within('#merchant-edit-buttons') do
+        click_on('Cancel')
+      end
+
+      expect(current_path).to eq("/merchants/#{@merchant1.id}")
     end
   end
+
   context 'new page' do
     it 'can cancel the create' do
+
       visit '/merchants/new'
-      click_link('Cancel')
+
+      within('#merchant-edit-buttons') do
+        click_on('Cancel')
+      end
 
       expect(current_path).to eq('/merchants')
     end

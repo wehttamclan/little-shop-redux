@@ -32,6 +32,11 @@ footer {
   padding: 8px 4px;
 }
 
+.items-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 #little-shop {
   position: absolute;
   top: 7px;
@@ -132,6 +137,7 @@ footer {
 }
 
 #item-box {
+  flex-wrap: wrap;
   height: 240px;
   width: 180px;
   margin: 40px;

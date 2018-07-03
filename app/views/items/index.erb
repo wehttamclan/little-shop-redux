@@ -5,6 +5,7 @@
     <a href='/items/new'><button id='create-merchant-button'>Create A New Item</button></a>
   </p>
 </header>
+<div class='items-container'>
   <% @items.each do |item| %>
   <ul id='item-box'>
     <img id='tulip-image' src='tulips.jpg' alt="yellow-tulip">
@@ -19,3 +20,4 @@
       </div>
   </ul>
   <% end %>
+</div>

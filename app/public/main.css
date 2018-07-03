@@ -175,6 +175,11 @@ footer {
   display: flex;
 }
 
+.invoice-show-table {
+  display: flex;
+  flex-direction: row;
+}
+
 #merchant-edit-buttons {
   height: 220px;
   display: flex;

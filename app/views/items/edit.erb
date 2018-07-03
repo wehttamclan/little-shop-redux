@@ -4,5 +4,6 @@
   <input type="text" name="item[description]" value="<%= @item.description %>"/>
   <input type="integer" name="item[price]" value="<%= @item.price %>"/>
   <input type="text" name="item[image]" value="<%= @item.image %>"/>
+  <button><a href='/items/<%= @item.id %>'>Cancel</a></button>
   <input type='submit' value='Update Item'/>
 </form>

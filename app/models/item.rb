@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
   end
 
   def self.avg_price
-    average(:price) / 100
+    average(:price) / 100.0
   end
 
   def self.newest

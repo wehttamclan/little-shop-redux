@@ -18,7 +18,7 @@ CSV.foreach('./data/items.csv', headers: true, header_converters: :symbol) do |i
               title: item[:name],
               description: item[:description],
               price: item[:unit_price],
-              image: 'https://guidelive.imgix.net/1452547762-Polyphonic-Spree-with-David-Bowie.JPG?fit=clip&q=60&or=0&auto=format&h=600',
+              image: './app/public/tulips.jpg',
               created_at: item[:created_at],
               updated_at: item[:updated_at],
               merchant_id: item[:merchant_id])

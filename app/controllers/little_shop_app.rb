@@ -87,7 +87,7 @@ class LittleShopApp < Sinatra::Base
   end
 
   get '/invoices-dashboard' do
-    @invoices = Invoice.all
+    @invoices = Invoice.all.includes(:invoice_items)
     @invoice_items = InvoiceItem.all
     @highest_price = @invoice_items.highest_price
     @lowest_price = @invoice_items.lowest_price

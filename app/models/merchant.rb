@@ -5,7 +5,11 @@ class Merchant < ActiveRecord::Base
   validates_presence_of :name
 
   def self.find_merchant_with_most_items
-    all.max_by { |merchant| merchant.items.length }
+    select('merchants.*, count(items.id) as item_count')
+    .joins(:items)
+    .group('merchants.id')
+    .order('item_count desc')
+    .first
   end
 
   def avg_item_price
@@ -13,6 +17,6 @@ class Merchant < ActiveRecord::Base
   end
 
   def total_cost_of_items
-    items.sum(:price)
+    items.sum(:price) / 100.0
   end
 end

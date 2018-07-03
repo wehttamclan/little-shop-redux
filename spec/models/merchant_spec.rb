@@ -67,7 +67,7 @@ RSpec.describe Merchant do
                             price: 400,
                             image: 'www.realimage.com',
                             created_at: '2018-07-01 17:18:50 UTC')
-        expected = 600
+        expected = 6.0
 
         expect(test_merchant.total_cost_of_items).to eq(expected)
       end

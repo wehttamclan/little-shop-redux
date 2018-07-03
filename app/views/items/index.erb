@@ -1,17 +1,29 @@
-
-  <h1>Items</h1>
-  <a href='/items/new'><button>Create A New Item</button></a>
+<header id='header'>
+  <a id='dashboard-link' href="/items-dashboard">Dashboard</a>
+  <p id='merchant-logo'>Items</p>
+  <p id='create-merchant' >
+    <a href='/items/new'><button id='create-merchant-button'>Create A New Item</button></a>
+  </p>
+</header>
+<div class='items-container'>
   <% @items.each do |item| %>
-  <ul>
-    <li><%= item.image %></li>
-    <li><a href='/items/<%= item.id %>'><%= item.title %></a></li>
-    <li><%= item.price %></li>
-      <a href="/items/<%= item.id %>/edit"><button>Edit</button></a>
-      <div id="delete-<%= item.id %>">
-        <form action='/items/<%= item.id %>' method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
+  <ul id='item-box'>
+    <img id='tulip-image' src='tulips.jpg' alt="yellow-tulip">
+    <div class='item-attributes'>
+      <li><a href='/items/<%= item.id %>'><%= item.title %></a></li></br>
+      <li>$<%= '%.2f' % (item.price / 100.0) %></li></br>
+      <div class='item-buttons'>
+        <form action='/items/<%= item.id %>/edit' method="get">
+          <input id='edit-item-button' type="submit" value="Edit">
         </form>
+        <div id="delete-<%= item.id %>">
+          <form action='/items/<%= item.id %>' method="post">
+            <input type="hidden" name="_method" value="delete">
+            <input id='delete-item-button' type="submit" value="Delete">
+          </form>
+        </div>
       </div>
-  </ul>
-  <% end %>
+    </ul>
+    <% end %>
+  </div>
+</div>

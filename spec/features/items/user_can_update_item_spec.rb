@@ -6,11 +6,13 @@ describe 'User' do
       test_item = Item.create(title: 'dongle',
                               description: 'something',
                               price: 200,
-                              image: 'www.example.com')
+                              image: 'tulip.jpg')
 
       visit('/items')
 
-      click_link 'Edit'
+      within('.item-buttons') do
+        click_on 'Edit'
+      end
 
       expect(current_path).to eq("/items/#{test_item.id}/edit")
 

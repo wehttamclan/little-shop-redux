@@ -11,7 +11,6 @@ describe 'User' do
                           status: 'returned')
       invoice4 = Invoice.create(merchant_id: 1,
                           status: 'returned')
-
       invoice1.invoice_items.create(item_id: 123,
                                     quantity: 3,
                                     unit_price: 44)
@@ -21,6 +20,7 @@ describe 'User' do
       invoice3.invoice_items.create(item_id: 125,
                                     quantity: 9,
                                     unit_price: 94)
+
       pending  = 25
       shipped  = 25
       returned = 50

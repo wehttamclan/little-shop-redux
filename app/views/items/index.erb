@@ -1,9 +1,13 @@
-
-  <h1>Items</h1>
-  <a href='/items/new'><button>Create A New Item</button></a>
+<header id='header'>
+  <a id='dashboard-link' href="/items-dashboard">Dashboard</a>
+  <p id='merchant-logo'>Items</p>
+  <p id='create-merchant' >
+    <a href='/items/new'><button id='create-merchant-button'>Create A New Item</button></a>
+  </p>
+</header>
   <% @items.each do |item| %>
-  <ul>
-    <li><%= item.image %></li>
+  <ul id='item-box'>
+    <img id='tulip-image' src='tulips.jpg' alt="yellow-tulip">
     <li><a href='/items/<%= item.id %>'><%= item.title %></a></li>
     <li><%= item.price %></li>
       <a href="/items/<%= item.id %>/edit"><button>Edit</button></a>

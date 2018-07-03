@@ -7,6 +7,12 @@ ul {
   list-style-type: none;
 }
 
+footer {
+  height: 40px;
+  border: 1px solid black;
+  background-color: #9e9e9e8f;
+}
+
 .nav {
   display: flex;
   justify-content: flex-end;
@@ -37,12 +43,6 @@ ul {
   border: 1px solid black;
   background-color: rgba(56, 14, 238, 0.06);
   font-family: 'Amiko';font-size: 22px;
-}
-
-footer {
-  height: 40px;
-  border: 1px solid black;
-  background-color: #9e9e9e8f;
 }
 
 #right-nav-links {
@@ -129,4 +129,15 @@ footer {
   align-items: flex-end;
   justify-content: space-between;
   margin-top: 230px;
+}
+
+#item-box {
+  height: 240px;
+  width: 180px;
+  margin: 40px;
+}
+
+#tulip-image {
+  height: 200px;
+  width: 180px;
 }

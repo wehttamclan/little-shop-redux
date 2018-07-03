@@ -37,7 +37,6 @@ class LittleShopApp < Sinatra::Base
   end
 
   delete '/items/:id' do |id|
-    binding.pry
     Item.destroy(id)
     redirect '/items'
   end

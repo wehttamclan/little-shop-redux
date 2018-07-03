@@ -255,6 +255,11 @@ footer {
   justify-content: center;
 }
 
+.merchant-dashboard-boxes {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .create-contents {
   margin-bottom: 5px;
   border-radius: 2%;
@@ -263,6 +268,13 @@ footer {
   border: 1px solid black;
   height: 300px;
   margin-top: 5px;
+}
+
+.merchant-dashboard-box {
+  margin: 20px 20px 20px 20px;
+  height: 200px;
+  width: 180px;
+  border: 1px solid;
 }
 
 #cancel-create-buttons {

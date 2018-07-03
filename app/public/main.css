@@ -124,6 +124,13 @@ footer {
   margin-left: 20px;
 }
 
+#edit-merchant-logo {
+margin-top: 30px;
+font-size: 20px;
+display: flex;
+justify-content: center;
+}
+
 #merchant-logo {
   font-size: 20px;
   display: flex;

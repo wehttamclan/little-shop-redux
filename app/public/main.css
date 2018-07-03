@@ -255,9 +255,26 @@ footer {
   justify-content: center;
 }
 
+.merchants-dashboard-sub-header {
+  margin-left: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid;
+  margin-top: 10px;
+  height: 50px;
+  width: 95%;
+  background-color: #d5e3e8;
+}
+
+.merchant-db-boxes-text {
+  margin-left: 20px;
+}
+
 .merchant-dashboard-boxes {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .create-contents {
@@ -278,6 +295,7 @@ footer {
   height: 200px;
   width: 180px;
   border: 1px solid;
+  background-color: #fdf9d3;
 }
 
 #cancel-create-buttons {

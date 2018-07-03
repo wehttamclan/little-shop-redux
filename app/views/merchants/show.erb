@@ -1,8 +1,22 @@
-<h1><%= @merchant.name %></h1>
-<a href="/merchants/<%= @merchant.id %>/edit"><button>Edit</button></a>
-<div class="delete-<%= @merchant.id %>">
-  <form action='/merchants/<%= @merchant.id %>' method="post">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete">
-  </form>
-</div>
+
+<header id='header'>
+  <p id='merchant-logo'><%= @merchant.name%></p>
+  <p id='create-merchant' >
+    <div class='item-buttons'>
+      <form action='/merchants/<%= @merchant.id %>/edit' method="get">
+        <input id='edit-item-button' type="submit" value="Edit">
+      </form>
+      <form action='/merchants/<%= @merchant.id %>' method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input id='delete-item-button' type="submit" value="Delete">
+      </form>
+    </p>
+  </header>
+  <h1><%= @merchant.name %></h1>
+  <a href="/merchants/<%= @merchant.id %>/edit"><button>Edit</button></a>
+  <div class="delete-<%= @merchant.id %>">
+    <form action='/merchants/<%= @merchant.id %>' method="post">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+  </div>

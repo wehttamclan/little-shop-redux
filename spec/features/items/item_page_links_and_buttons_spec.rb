@@ -25,4 +25,12 @@ RSpec.describe do
       expect(current_path).to eq('/items/1')
     end
   end
+  context 'edit page' do
+    it 'can cancel the update' do
+      visit "/items/#{@item1.id}/edit"
+      click_link('Cancel')
+
+      expect(current_path).to eq('/items/1')
+    end
+  end
 end

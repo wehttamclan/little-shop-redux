@@ -33,4 +33,12 @@ RSpec.describe do
       expect(current_path).to eq('/items/1')
     end
   end
+  context 'new page' do
+    it 'can cancel the create' do
+      visit '/items/new'
+      click_link('Cancel')
+
+      expect(current_path).to eq('/items')
+    end
+  end
 end

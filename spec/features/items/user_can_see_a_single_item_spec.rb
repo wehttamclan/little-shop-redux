@@ -25,7 +25,6 @@ describe 'User' do
       visit("/items/#{item2.id}")
 
       expect(page).to have_content(price)
-      expect(page).to have_content(image)
     end
   end
 end

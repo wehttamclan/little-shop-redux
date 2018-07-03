@@ -1,7 +1,20 @@
+<header id='header'>
+  <p id='merchant-show-name'><%= @item.title %></p>
+  <p id='create-merchant' >
+    <div class='item-buttons'>
+      <form action='/merchants/<%= @item.id %>/edit' method="get">
+        <input id='edit-item-button' type="submit" value="Edit">
+      </form>
+      <form class="delete-<%= @item.id %>" action='/merchants/<%= @item.id %>' method="post">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete">
+      </form>
+    </p>
+  </header>
 <h1><%= @item.title %></h1>
 <h1><%= @item.description %></h1>
 <h1><%= @item.price %></h1>
-<h1><%= @item.image %></h1>
+<img class='tulip-image' src='/tulips.jpg' alt="yellow-tulip"/>
 <a href="/items/<%= @item.id %>/edit"><button>Edit</button></a>
 <div class="delete-<%= @item.id %>">
   <form action='/items/<%= @item.id %>' method="post">

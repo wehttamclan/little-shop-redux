@@ -27,7 +27,6 @@ describe 'User' do
       expect(page).to have_content('some other dongle')
       expect(page).to have_content('something else')
       expect(page).to have_content(222)
-      expect(page).to have_content('www.otherexample.com')
     end
   end
 end

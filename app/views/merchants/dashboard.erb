@@ -4,16 +4,15 @@
 
 <section class="merchants-dashboard-sub-header">
   <div class="most-items">
-    <p id='merchant-with-most-items'>Merchant With Most Items: <a href '/merchants/<%= @merchant_with_most_items.id %>'><%= @merchant_with_most_items.name %></a></p>
+    <p id='merchant-with-most-items'>Merchant With Most Items: <a href='/merchants/<%= @merchant_with_most_items.id %>'><%= @merchant_with_most_items.name %></a></p>
   </div>
   <div class="highest-item">
-    <p id='merchant-with-highest-priced-item'>Merchant With Highest Priced Item: <a href '/merchants/<%= @merchant.id %>'><%= @merchant_name_with_highest_priced_item %></a></p>
+    <p id='merchant-with-highest-priced-item'>Merchant With Highest Priced Item: <a href='/merchants/<%= @merchant_with_highest_price_item.id %>'><%= @merchant_name_with_highest_priced_item %></a></p>
   </div>
 </section>
 
 <section class='merchant-dashboard-boxes-container'>
   <div class="merchant-dashboard-boxes">
-
     <% @merchants.each do |merchant| %>
     <ul class='merchant-dashboard-box'>
       <div class="merchant-db-boxes-text">

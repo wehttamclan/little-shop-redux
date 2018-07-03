@@ -1,6 +1,40 @@
-<form action="/invoices/<%= @invoice.id %>" method="post">
-  <input type="hidden" name="_method" value="PUT"/>
-  <input type="text" name="invoice[merchant_id]" value="<%= @invoice.merchant_id %>"/>
-  <input type="text" name="invoice[status]" value="<%= @invoice.status %>"/>
-  <input type='submit' value='Update Item'/>
-</form>
+<p>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %>
+  <p>Merchant</p>
+  <select disabled>
+    <option value="merchant"><%= @invoice.merchant.name %></option>
+  </select>
+<section id='status-dropdown'>
+  <form action="/invoices/<%= @invoice.id %>" method="post">
+    <p>Status</p>
+    <select name='invoice[status]' id='status'>
+      <% if @invoice.status == 'pending' %>
+        <option value="pending" selected>Pending</option>
+        <option value="shipped">Shipped</option>
+        <option value="returned">Returned</option>
+      <% elsif @invoice.status == 'shipped' %>
+        <option value="pending">Pending</option>
+        <option value="shipped" selected>Shipped</option>
+        <option value="returned">Returned</option>
+      <% else %>
+        <option value="pending">Pending</option>
+        <option value="shipped">Shipped</option>
+        <option value="returned" selected>Returned</option>
+      <% end %>
+    </select>
+    <button><a href='/invoices/<%= @invoice.id %>'>Cancel</a></button>
+    <input type="hidden" name="_method" value="patch"/>
+    <input type='submit' value='Update Invoice'/>
+  </form>
+</section>
+<ul>
+  <p>Item ID</p>
+  <p>Item Title</p>
+  <p>Quantity</p>
+  <p>Unit Price</p>
+  <% @invoice.invoice_items.each do |invoice_item| %>
+    <li><a href='/items/<%= invoice_item.item_id %>'><%= invoice_item.item_id %></a></li>
+    <li><p><%= invoice_item.item.title %></p></li>
+    <li><p><%= invoice_item.quantity %></p></li>
+    <li><p><%= invoice_item.unit_price %></p></li>
+  <% end %>
+</ul>

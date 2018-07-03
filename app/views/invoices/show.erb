@@ -1,5 +1,5 @@
-<h1><%= @invoice.merchant_id %></h1>
-<h1><%= @invoice.status %></h1>
+<h1>Invoice: <%= @invoice.id %> - <%= @invoice.status.capitalize %></h1>
+<p>Invoice Total: $<%= (@invoice.total_price)/100.0 %></p>
 <a href="/invoices/<%= @invoice.id %>/edit"><button>Edit</button></a>
 <div class="delete-<%= @invoice.id %>">
   <form action='/invoices/<%= @invoice.id %>' method="post">
@@ -7,12 +7,10 @@
     <input type="submit" value="Delete">
   </form>
 </div>
-
+<a href='/merchants/<%= @invoice.merchant_id %>'><%= @invoice.merchant.name %></a>
 <% @invoice.invoice_items.each do |ii| %>
 <ul id="invoice-<%= @invoice.id %>">
   <li> <%= ii.quantity %></li>
   <li> <%= ii.unit_price %></li>
 </ul>
 <% end %>
-
-<%= (@invoice.total_price)/100.0 %>

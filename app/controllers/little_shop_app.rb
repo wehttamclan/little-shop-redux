@@ -89,7 +89,17 @@ class LittleShopApp < Sinatra::Base
   get '/invoices-dashboard' do
     @invoices = Invoice.all.includes(:invoice_items)
     @invoice_items = InvoiceItem.all
+    @highest_price = @invoice_items.highest_price
+    @lowest_price = @invoice_items.lowest_price
+    @highest_quantity = @invoice_items.highest_quantity
+    @lowest_quantity = @invoice_items.lowest_quantity
     erb :'invoices/dashboard'
+  end
+
+  patch '/invoices/:id' do
+    invoice = Invoice.find(params[:id])
+    invoice.update(params[:invoice])
+    redirect "/invoices/#{invoice.id}"
   end
 
   get '/invoices/:id' do
@@ -99,12 +109,8 @@ class LittleShopApp < Sinatra::Base
 
   get '/invoices/:id/edit' do
     @invoice = Invoice.find(params[:id])
+    # binding.pry
     erb :'invoices/edit'
-  end
-
-  put '/invoices/:id' do |id|
-    Invoice.update(id.to_i, params[:invoice])
-    redirect "/invoices/#{id}"
   end
 
   delete '/invoices/:id' do |id|

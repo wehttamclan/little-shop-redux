@@ -17,6 +17,7 @@ footer {
   display: flex;
   justify-content: flex-end;
   align-content: center;
+  font-family: 'Raleway', sans-serif;
   border: 1px solid black;
 }
 

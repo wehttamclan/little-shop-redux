@@ -74,13 +74,20 @@ class LittleShopApp < Sinatra::Base
     redirect '/merchants'
   end
 
+  get '/merchants-dashboard' do
+    @merchants = Merchant.all.includes(:items)
+    @merchant_with_most_items = Merchant.find_merchant_with_most_items
+    @merchant_name_with_highest_priced_item = Item.find_highest_priced_item.merchant.name
+    erb :'merchants/dashboard'
+  end
+
   get '/invoices' do
     @invoices = Invoice.all
     erb :'invoices/index'
   end
 
   get '/invoices-dashboard' do
-    @invoices = Invoice.all
+    @invoices = Invoice.all.includes(:invoice_items)
     @invoice_items = InvoiceItem.all
     @highest_price = @invoice_items.highest_price
     @lowest_price = @invoice_items.lowest_price

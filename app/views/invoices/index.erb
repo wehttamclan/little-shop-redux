@@ -1,22 +1,39 @@
-<html lang="en" dir="ltr">
-<head>
-  <meta charset="utf-8">
-  <title>Invoices</title>
-</head>
-<body>
-  <h1>Invoices</h1>
-  <a href='/invoices/new'><button>Create A New Invoice</button></a>
-  <% @invoices.each do |invoice| %>
-  <ul>
-    <li><a href='/invoices/<%= invoice.id %>'><%= invoice.merchant_id %></a></li>
-      <a href="/invoices/<%= invoice.id %>/edit"><button>Edit</button></a>
-      <div id="delete-<%= invoice.id %>">
-        <form action='/invoices/<%= invoice.id %>' method="post">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Delete">
-        </form>
-      </div>
-  </ul>
-  <% end %>
-</body>
-</html>
+<header id='header'>
+  <a id='dashboard-link' href="/merchants-dashboard">Dashboard</a>
+  <p id='merchant-logo'>Invoices</p>
+</header>
+  <section id="merchant-box">
+    <div id='merchant-inner-box'>
+      <% @invoices.each_with_index do |invoice, index| %>
+      <% if index.odd? %>
+      <ul id='grey-row'>
+        <li id='merchant-row'><a id='merchant-name' href='/invoices/<%= invoice.id %>'><%= invoice.id %></a>
+          <div id='buttons-box'>
+            <a href="/invoices/<%= invoice.id %>/edit"><button id='edit-button'>Edit</button></a>
+            <div id="delete-<%= invoice.id %>">
+              <form action='/invoices/<%= invoice.id %>' method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input id='delete-button' type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <% else %>
+      <ul>
+        <li id='merchant-row'><a id='merchant-name' href='/invoices/<%= invoice.id %>'><%= invoice.id %></a>
+          <div id='buttons-box'>
+            <a href="/invoices/<%= invoice.id %>/edit"><button id='edit-button'>Edit</button></a>
+            <div id="delete-<%= invoice.id %>">
+              <form action='/invoices/<%= invoice.id %>' method="post">
+                <input type="hidden" name="_method" value="delete">
+                <input id='delete-button' type="submit" value="Delete">
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <% end %>
+      <% end %>
+    </div>
+  </section>

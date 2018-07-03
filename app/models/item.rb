@@ -10,7 +10,7 @@ class Item < ActiveRecord::Base
   end
 
   def self.avg_price
-    average(:price) / 100
+    average(:price) / 100.0
   end
 
   def self.newest
@@ -20,4 +20,14 @@ class Item < ActiveRecord::Base
   def self.oldest
     order(:created_at).first
   end
+
+  def self.find_highest_priced_item
+    all.find_by(price: max_price)
+  end
+
+  def self.max_price
+    all.maximum(:price)
+  end
+
+  private_class_method :max_price
 end
